@@ -1,0 +1,924 @@
+/* ==========================================
+   Global Styles
+========================================== */
+
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width:768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================================
+   Bootstrap Focus Fix
+========================================== */
+
+.login-page .btn:focus,
+.login-page .btn:active:focus,
+.login-page .btn-link.nav-link:focus,
+.login-page .form-control:focus,
+.login-page .form-check-input:focus,
+.signup-page .btn:focus,
+.signup-page .btn:active:focus,
+.signup-page .btn-link.nav-link:focus,
+.signup-page .form-control:focus,
+.signup-page .form-check-input:focus {
+    box-shadow: 0 0 0 .1rem #fff, 0 0 0 .25rem #258cfb;
+}
+
+/* ==========================================
+   Form Floating
+========================================== */
+
+.login-page .form-floating > .form-control-plaintext::placeholder,
+.login-page .form-floating > .form-control::placeholder,
+.signup-page .form-floating > .form-control-plaintext::placeholder,
+.signup-page .form-floating > .form-control::placeholder {
+    color: var(--bs-secondary-color);
+    text-align: end;
+}
+
+.login-page .form-floating > .form-control-plaintext:focus::placeholder,
+.login-page .form-floating > .form-control:focus::placeholder,
+.signup-page .form-floating > .form-control-plaintext:focus::placeholder,
+.signup-page .form-floating > .form-control:focus::placeholder {
+    text-align: start;
+}
+
+/* ==========================================
+   Shared Login & Signup Layout
+========================================== */
+
+.login-page,
+.signup-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg,#f3f8f1 0%,#ffffff 50%,#ecf7e8 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    font-family: inherit;
+}
+
+/* ==========================================
+   Containers
+========================================== */
+
+.login-container,
+.signup-container {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+}
+
+/* ==========================================
+   Left Information Panel
+========================================== */
+
+.login-info,
+.signup-info {
+    background: linear-gradient(135deg,#22c55e,#16a34a);
+    color: #fff;
+    padding: 50px;
+    position: relative;
+}
+
+/* ==========================================
+   Brand Box
+========================================== */
+
+.brand-box h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.brand-box p {
+    font-size: 15px;
+    opacity: .9;
+    margin-bottom: 80px;
+}
+
+/* ==========================================
+   Information Content
+========================================== */
+
+.info-content h1 {
+    font-size: 44px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+.info-content > p {
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: .95;
+    max-width: 480px;
+    margin-bottom: 35px;
+}
+
+/* ==========================================
+   Benefits
+========================================== */
+
+.benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+    .benefit-item span {
+        width: 28px;
+        height: 28px;
+        background: #fff;
+        color: #0aad0a;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 800;
+    }
+
+    .benefit-item p {
+        margin: 0;
+        font-size: 15px;
+    }
+/* ==========================================
+   Login & Signup Cards
+========================================== */
+
+.login-card,
+.signup-card {
+    background: #ffffff;
+    padding: 50px 45px;
+}
+
+/* ==========================================
+   Form Header
+========================================== */
+
+.login-page .form-header,
+.signup-page .form-header {
+    margin-bottom: 30px;
+}
+
+    .login-page .form-header h3,
+    .signup-page .form-header h3 {
+        font-size: 32px;
+        font-weight: 800;
+        color: #21313c;
+        margin-bottom: 8px;
+    }
+
+    .login-page .form-header p,
+    .signup-page .form-header p {
+        color: #6b7280;
+        margin: 0;
+        font-size: 15px;
+    }
+
+/* ==========================================
+   Form Group
+========================================== */
+
+.login-page .form-group,
+.signup-page .form-group {
+    margin-bottom: 18px;
+}
+
+    .login-page .form-group label,
+    .signup-page .form-group label {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #21313c;
+    }
+
+/* ==========================================
+   Bootstrap Safe Form Controls
+========================================== */
+
+.login-page .form-control,
+.signup-page .form-control {
+    width: 100%;
+    height: 48px;
+    padding: 10px 14px;
+    font-size: 15px;
+    color: #21313c;
+    background: #ffffff;
+    border: 1px solid #dfe2e1;
+    border-radius: 10px;
+    transition: all .2s ease;
+}
+
+    .login-page .form-control:focus,
+    .signup-page .form-control:focus {
+        border-color: #0aad0a;
+        box-shadow: 0 0 0 4px rgba(10,173,10,.12);
+        outline: none;
+    }
+
+/* ==========================================
+   Validation Messages
+========================================== */
+
+.login-page .text-danger,
+.signup-page .text-danger {
+    display: block;
+    margin-top: 5px;
+    font-size: 13px;
+}
+
+/* ==========================================
+   Login & Signup Buttons
+========================================== */
+
+.login-btn,
+.signup-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 10px;
+    background: #0aad0a;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all .2s ease;
+    cursor: pointer;
+}
+
+    .login-btn:hover,
+    .signup-btn:hover {
+        background: #099309;
+    }
+
+    /* ==========================================
+   Disabled Buttons
+========================================== */
+
+    .login-btn:disabled,
+    .signup-btn:disabled {
+        opacity: .7;
+        cursor: not-allowed;
+    }
+
+/* ==========================================
+   Back Home Link
+========================================== */
+
+.login-page .back-home,
+.signup-page .back-home {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+    .login-page .back-home:hover,
+    .signup-page .back-home:hover {
+        text-decoration: underline;
+    }
+
+/* ==========================================
+   Form Footer
+========================================== */
+
+.login-page .form-footer,
+.signup-page .form-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+    .login-page .form-footer p,
+    .signup-page .form-footer p {
+        color: #6b7280;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .login-page .form-footer a,
+    .signup-page .form-footer a {
+        color: #0aad0a;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+        .login-page .form-footer a:hover,
+        .signup-page .form-footer a:hover {
+            text-decoration: underline;
+        }
+
+
+/* ==========================================
+   Small Text Helpers
+========================================== */
+
+.login-page small,
+.signup-page small {
+    font-size: 13px;
+}
+
+
+/* ==========================================
+   Login Specific Card Size
+========================================== */
+
+.login-card {
+    padding: 60px 45px;
+}
+
+
+/* ==========================================
+   Signup Specific Card Size
+========================================== */
+
+.signup-card {
+    padding: 50px 45px;
+}
+
+
+/* ==========================================
+   Responsive Design
+========================================== */
+
+@media (max-width:900px) {
+
+    .login-container,
+    .signup-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .login-info,
+    .signup-info {
+        padding: 35px 25px;
+    }
+
+
+    .brand-box p {
+        margin-bottom: 35px;
+    }
+
+
+    .info-content h1 {
+        font-size: 34px;
+    }
+
+
+    .login-card,
+    .signup-card {
+        padding: 35px 25px;
+    }
+}
+
+
+/* ==========================================
+   Mobile Devices
+========================================== */
+
+@media (max-width:576px) {
+
+    .login-page,
+    .signup-page {
+        padding: 25px 12px;
+    }
+
+
+    .login-container,
+    .signup-container {
+        border-radius: 18px;
+    }
+
+
+    .info-content h1 {
+        font-size: 28px;
+    }
+
+
+    .form-header h3 {
+        font-size: 26px;
+    }
+
+
+    .login-info,
+    .signup-info {
+        padding: 30px 20px;
+    }
+
+
+    .login-card,
+    .signup-card {
+        padding: 30px 20px;
+    }
+
+
+    .benefit-item p {
+        font-size: 14px;
+    }
+}
+
+/* ==========================================
+   Additional Form Improvements
+========================================== */
+
+.login-page input,
+.signup-page input {
+    font-family: inherit;
+}
+
+
+    .login-page input::placeholder,
+    .signup-page input::placeholder {
+        color: #9ca3af;
+        opacity: 1;
+    }
+
+
+/* ==========================================
+   Checkbox / Remember Me
+========================================== */
+
+.login-page .form-check,
+.signup-page .form-check {
+    margin-bottom: 18px;
+}
+
+
+.login-page .form-check-input,
+.signup-page .form-check-input {
+    cursor: pointer;
+}
+
+
+.login-page .form-check-label,
+.signup-page .form-check-label {
+    color: #6b7280;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   Password Field Helper
+========================================== */
+
+.password-field {
+    position: relative;
+}
+
+
+    .password-field .toggle-password {
+        position: absolute;
+        right: 14px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6b7280;
+    }
+
+
+/* ==========================================
+   Smooth Animation
+========================================== */
+
+.login-container,
+.signup-container,
+.login-card,
+.signup-card {
+    animation: fadeIn .35s ease-in-out;
+}
+
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================
+   Hover Effects
+========================================== */
+
+.login-btn,
+.signup-btn {
+    transform: translateY(0);
+}
+
+
+    .login-btn:hover,
+    .signup-btn:hover {
+        transform: translateY(-1px);
+    }
+
+
+/* ==========================================
+   Brand Text Protection
+========================================== */
+
+.login-info *,
+.signup-info * {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   Card Shadow Enhancement
+========================================== */
+
+.login-container,
+.signup-container {
+    box-shadow: 0 20px 45px rgba(0,0,0,.08);
+}
+
+
+/* ==========================================
+   Error State
+========================================== */
+
+.login-page .input-validation-error,
+.signup-page .input-validation-error {
+    border-color: #dc3545;
+}
+
+
+    .login-page .input-validation-error:focus,
+    .signup-page .input-validation-error:focus {
+        border-color: #dc3545;
+        box-shadow: 0 0 0 4px rgba(220,53,69,.12);
+    }
+
+
+/* ==========================================
+   Success Message
+========================================== */
+
+.login-page .text-success,
+.signup-page .text-success {
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* ==========================================
+   Links
+========================================== */
+
+.login-page a,
+.signup-page a {
+    transition: color .2s ease;
+}
+
+
+/* ==========================================
+   Prevent Bootstrap Container Issues
+========================================== */
+
+.login-page .container,
+.signup-page .container {
+    max-width: 100%;
+}
+
+/* ==========================================
+   Accessibility Improvements
+========================================== */
+
+.login-page button,
+.signup-page button,
+.login-page input,
+.signup-page input {
+    outline: none;
+}
+
+
+    /* ==========================================
+   Better Focus Visibility
+========================================== */
+
+    .login-page a:focus-visible,
+    .signup-page a:focus-visible,
+    .login-page button:focus-visible,
+    .signup-page button:focus-visible,
+    .login-page input:focus-visible,
+    .signup-page input:focus-visible {
+        outline: 2px solid #258cfb;
+        outline-offset: 2px;
+    }
+
+
+/* ==========================================
+   Login / Signup Text Alignment
+========================================== */
+
+.login-page .text-center,
+.signup-page .text-center {
+    text-align: center;
+}
+
+
+/* ==========================================
+   Remove Bootstrap Margin Conflicts
+========================================== */
+
+.login-page h1,
+.login-page h2,
+.login-page h3,
+.signup-page h1,
+.signup-page h2,
+.signup-page h3 {
+    margin-top: 0;
+}
+
+
+/* ==========================================
+   Image / Logo Support
+========================================== */
+
+.login-page img,
+.signup-page img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* ==========================================
+   Mobile Form Improvements
+========================================== */
+
+@media(max-width:576px) {
+
+    .login-page .form-control,
+    .signup-page .form-control {
+        height: 46px;
+        font-size: 14px;
+    }
+
+
+    .login-btn,
+    .signup-btn {
+        height: 48px;
+        font-size: 15px;
+    }
+
+
+    .login-page .form-header h3,
+    .signup-page .form-header h3 {
+        font-size: 24px;
+    }
+
+
+    .brand-box h2 {
+        font-size: 26px;
+    }
+
+
+    .brand-box p {
+        font-size: 14px;
+    }
+}
+
+
+/* ==========================================
+   Extra Small Devices
+========================================== */
+
+@media(max-width:400px) {
+
+    .login-page,
+    .signup-page {
+        padding: 15px 8px;
+    }
+
+
+    .login-info,
+    .signup-info {
+        padding: 25px 15px;
+    }
+
+
+    .login-card,
+    .signup-card {
+        padding: 25px 15px;
+    }
+
+
+    .info-content h1 {
+        font-size: 25px;
+    }
+
+
+    .benefit-item {
+        gap: 8px;
+    }
+
+
+        .benefit-item span {
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+        }
+}
+
+
+/* ==========================================
+   Print Support
+========================================== */
+
+@media print {
+
+    .login-page,
+    .signup-page {
+        background: #fff;
+        padding: 0;
+    }
+
+
+    .login-container,
+    .signup-container {
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+
+
+    .login-info,
+    .signup-info {
+        background: #fff;
+        color: #000;
+    }
+}
+
+/* ==========================================
+   CSS Variables
+   ========================================== */
+
+:root {
+    --primary-green: #0aad0a;
+    --primary-green-dark: #099309;
+    --text-dark: #21313c;
+    --text-muted: #6b7280;
+    --border-color: #dfe2e1;
+    --light-bg: #f3f8f1;
+}
+
+
+/* ==========================================
+   Common Text Utilities
+   ========================================== */
+
+.login-page .text-muted,
+.signup-page .text-muted {
+    color: var(--text-muted) !important;
+}
+
+
+.login-page .text-dark,
+.signup-page .text-dark {
+    color: var(--text-dark) !important;
+}
+
+
+/* ==========================================
+   Green Theme Helpers
+   ========================================== */
+
+.login-page .theme-color,
+.signup-page .theme-color {
+    color: var(--primary-green);
+}
+
+
+.login-page .theme-bg,
+.signup-page .theme-bg {
+    background-color: var(--primary-green);
+}
+
+
+/* ==========================================
+   Loading Button State
+========================================== */
+
+.login-btn.loading,
+.signup-btn.loading {
+    pointer-events: none;
+    opacity: .8;
+}
+
+
+    .login-btn.loading::after,
+    .signup-btn.loading::after {
+        content: "";
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-left: 8px;
+        border: 2px solid #fff;
+        border-right-color: transparent;
+        border-radius: 50%;
+        animation: spin .7s linear infinite;
+    }
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==========================================
+   Prevent Overflow Issues
+========================================== */
+
+.login-page,
+.signup-page {
+    overflow-x: hidden;
+}
+
+
+.login-container,
+.signup-container {
+    overflow: hidden;
+}
+
+
+/* ==========================================
+   Smooth Transition
+========================================== */
+
+.login-page *,
+.signup-page * {
+    box-sizing: border-box;
+}
+
+
+/* ==========================================
+   Final Mobile Fixes
+========================================== */
+
+@media(max-width:768px) {
+
+    .login-container,
+    .signup-container {
+        max-width: 100%;
+    }
+
+
+    .login-info,
+    .signup-info {
+        text-align: center;
+    }
+
+
+    .benefits {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+
+    .login-card,
+    .signup-card {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================
+   End Of Login / Signup CSS
+========================================== */

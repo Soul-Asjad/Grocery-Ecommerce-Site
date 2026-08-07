@@ -1,0 +1,729 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="assets/images/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+          rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/@@tabler/icons-webfont@@2.46.0/tabler-icons.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="~/css/theme.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <title>FreshCart Grocery Store</title>
+</head>
+
+<body>
+    <header>
+  
+        <div class="border-b">
+            <div class="bg-gray-100 py-1">
+                <div class="container">
+                    <div class="flex flex-wrap">
+                        <div class="md:w-1/2 w-full text-center md:text-left">
+                            <span>
+                                Super Value Deals - Save more with
+                                coupons
+                            </span>
+                        </div>
+                        <div class="w-1/2 text-right hidden lg:block">
+                            <div class="dropdown flex justify-end">
+                                <a class="dropdown-toggle text-inherit flex items-center" data-bs-toggle="dropdown"
+                                   href="#" id="dropdownMenuLink">
+                                    <span class="mr-2">
+                                        <span class="inline-block align-middle">🌐</span>
+                                    </span>
+                                    <span id="selectedLanguage">English</span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>
+                                        <a class="dropdown-item" href="#" onclick="changeLanguage('English')">
+                                            <span>
+                                                <span class="inline-block align-middle">🌐</span>
+                                            </span>
+                                            English
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" onclick="changeLanguage('Deutsch')">
+                                            <span>
+                                                <span class="inline-block align-middle">🌐</span>
+                                            </span>
+                                            Deutsch
+                                        </a>
+                                    </li>
+                                    <!-- Add more languages as needed -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-5">
+                <div class="container">
+                    <div class="flex flex-wrap w-full items-center justify-between">
+                        <div class="lg:w-1/6 md:w-1/2 w-2/5">
+                            <a class="navbar-brand" href="index.html">
+                                <img alt=""
+                                     src="~/images/logo/freshcart-logo.svg" />
+                            </a>
+                        </div>
+                        <div class="lg:w-2/5 hidden lg:block">
+                            <form action="#">
+                                <div class="relative">
+                                    <label class="invisible hidden" for="searchProducts">Search</label>
+                                    <input class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
+                                           id="searchProducts" placeholder="Search for products" type="search" />
+                                    <button class="absolute right-0 top-0 p-3" type="button">
+                                        <i class="ti ti-search inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="lg:w-1/5 hidden lg:block">
+                            <!-- Button trigger modal -->
+                            <button class="btn inline-flex items-center gap-x-2 bg-transparent text-gray-600 border-gray-300 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                    data-bs-target="#locationModal" data-bs-toggle="modal" type="button">
+                                <span class="flex items-center gap-1">
+                                    <span>
+                                        <i class="ti ti-map-pin inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </span>
+                                    <span>Location</span>
+                                </span>
+                            </button>
+                        </div>
+                        <div class="lg:w-1/5 text-end md:w-1/2 w-3/5">
+                            <div class="flex gap-7 items-center justify-end">
+                                <div>
+                                    <a class="relative" href="#">
+                                        <i class="ti ti-heart inline-block"
+                                           style="font-size:24px; line-height:24px;"></i>
+                                        <span class="absolute top-0 -mt-1 left-full rounded-full h-5 w-5 -ml-2 bg-green-600 text-white text-center font-semibold text-sm">
+                                            5
+                                            <span class="invisible">unread messages</span>
+                                        </span>
+                                    </a>
+                                </div>
+                                @* Login and Signup Logo *@
+                                <div>
+                                    <a class="text-gray-600" asp-action="Signup" asp-controller="User">
+                                        <i class="ti ti-user inline-block"
+                                           style="font-size:22px; line-height:22px;"></i>
+                                    </a>
+                                </div>
+                                <div>
+                                    <button aria-controls="offcanvasRight" class="text-gray-600 relative"
+                                            data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas" role="button"
+                                            type="button">
+                                        <i class="ti ti-shopping-bag inline-block"
+                                           style="font-size:24px; line-height:24px;"></i>
+                                        <span class="absolute top-0 -mt-1 left-full rounded-full h-5 w-5 -ml-3 bg-green-600 text-white text-center font-semibold text-sm"
+                                              id="cartCount">
+                                            0
+                                            <span class="invisible">unread messages</span>
+                                        </span>
+                                    </button>
+                                </div>
+                                <div class="lg:hidden leading-none">
+                                    <!-- Button -->
+                                    <button aria-controls="navbar-default" aria-label="Toggle navigation"
+                                            class="collapsed" data-bs-target="#navbar-default" data-bs-toggle="offcanvas"
+                                            type="button">
+                                        <i class="ti ti-menu-2 inline-block"
+                                           style="font-size:24px; line-height:24px;"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav aria-label="Offcanvas navbar large"
+                 class="navbar relative navbar-expand-lg lg:flex lg:flex-wrap items-center content-between text-black navbar-default">
+                <div class="container max-w-7xl mx-auto w-full xl:px-4 lg:px-0">
+                    <div class="offcanvas offcanvas-left lg:visible" id="navbar-default" tabindex="-1">
+                        <div class="offcanvas-header pb-1">
+                            <a href="index.html">
+                                <img alt="TailwindCSS eCommerce HTML Template"
+                                     src="assets/images/logo/freshcart-logo.svg" />
+                            </a>
+                            <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
+                                <i class="ti ti-x inline-block" style="font-size:24px; line-height:24px;"></i>
+                            </button>
+                        </div>
+                        <div class="offcanvas-body lg:flex lg:items-center">
+                            <div class="block lg:hidden mb-4">
+                                <form action="#">
+                                    <div class="relative">
+                                        <label class="invisible hidden" for="searhNavbar">Search</label>
+                                        <input class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
+                                               id="searhNavbar" placeholder="Search for products" type="search" />
+                                        <button class="absolute right-0 top-0 p-3" type="button">
+                                            <i class="ti ti-search inline-block"
+                                               style="font-size:16px; line-height:16px;"></i>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="block lg:hidden mb-4">
+                                <a aria-controls="collapseExample" aria-expanded="false"
+                                   class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 justify-center"
+                                   data-bs-toggle="collapse" href="#collapseExample" role="button">
+                                    <span class="mr-2">
+                                        <i class="ti ti-layout-grid inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </span>
+                                    All Categories
+                                </a>
+                                <div class="collapse mt-2" id="collapseExample">
+                                    <div class="card card-body">
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" href="#">Dairy, Bread &amp; Eggs</a></li>
+                                            <li><a class="dropdown-item" href="#">Snacks &amp; Munchies</a></li>
+                                            <li><a class="dropdown-item" href="#">Fruits &amp; Vegetables</a></li>
+                                            <li><a class="dropdown-item" href="#">Cold Drinks &amp; Juices</a></li>
+                                            <li><a class="dropdown-item" href="#">Breakfast &amp; Instant Food</a></li>
+                                            <li><a class="dropdown-item" href="#">Bakery &amp; Biscuits</a></li>
+                                            <li><a class="dropdown-item" href="#">Chicken, Meat &amp; Fish</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dropdown hidden lg:block">
+                                <button aria-expanded="false"
+                                        class="mr-4 btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300"
+                                        data-bs-toggle="dropdown" id="dropdownMenuButton1" type="button">
+                                    <span>
+                                        <i class="ti ti-layout-grid inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </span>
+                                    All Categories
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Dairy, Bread &amp; Eggs</a></li>
+                                    <li><a class="dropdown-item" href="#">Snacks &amp; Munchies</a></li>
+                                    <li><a class="dropdown-item" href="#">Fruits &amp; Vegetables</a></li>
+                                    <li><a class="dropdown-item" href="#">Cold Drinks &amp; Juices</a></li>
+                                    <li><a class="dropdown-item" href="#">Breakfast &amp; Instant Food</a></li>
+                                    <li><a class="dropdown-item" href="#">Bakery &amp; Biscuits</a></li>
+                                    <li><a class="dropdown-item" href="#">Chicken, Meat &amp; Fish</a></li>
+                                </ul>
+                            </div>
+
+                            @* Pages of links *@
+
+                            <div>
+                                <ul class="navbar-nav lg:flex gap-3 lg:items-center">
+                                    <li class="nav-item dropdown w-full lg:w-auto">
+                                        <a class="nav-link" href="index.html" role="button">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">
+                                            Products
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Deals</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Contact</a>
+                                    </li>
+                                    @if(Context.Session.GetString("user_role") == "admin")
+                                        {
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="Index" asp-controller="Admin" >Dashboard</a>
+                                        </li>
+                                        }
+                                    else if(Context.Session.GetString("user_role") == "user")
+                                    {
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-action="Index" asp-controller="Home" >Dashboard</a>
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="bg-gray-200 py-8">
+        <div class="container">
+            <div class="flex flex-wrap md:gap-4 lg:gap-0 py-4 mb-6">
+                <div class="w-full md:w-full lg:w-1/3 flex flex-col gap-4 mb-6">
+                    <h6>Categories</h6>
+                    <div class="flex flex-wrap">
+                        <div class="w-1/2">
+                            <!-- list -->
+                            <ul class="flex flex-col gap-2">
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Vegetables &amp; Fruits</a>
+                                </li>
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">
+                                        Breakfast &amp; instant
+                                        food
+                                    </a>
+                                </li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Bakery &amp; Biscuits</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Atta, rice &amp; dal</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Sauces &amp; spreads</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Organic &amp; gourmet</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Baby care</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Cleaning essentials</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Personal care</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-1/2">
+                            <!-- list -->
+                            <ul class="flex flex-col gap-2">
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Dairy, bread &amp; eggs</a>
+                                </li>
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Cold drinks &amp; juices</a>
+                                </li>
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Tea, coffee &amp; drinks</a>
+                                </li>
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Masala, oil &amp; more</a>
+                                </li>
+                                <li>
+                                    <a class="inline-block hover:text-green-600" href="#">Chicken, meat &amp; fish</a>
+                                </li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Paan corner</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Pharma &amp; wellness</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Home &amp; office</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Pet care</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full md:w-full lg:w-2/3">
+                    <div class="flex flex-wrap">
+                        <div class="w-1/2 sm:w-1/2 md:w-1/4 flex flex-col gap-4 mb-6">
+                            <h6>Get to know us</h6>
+                            <!-- list -->
+                            <ul class="flex flex-col gap-2">
+                                <li><a class="inline-block hover:text-green-600" href="#">Company</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">About</a></li>
+                                <li><a class="inline-block" href="#">Blog</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Help Center</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Our Value</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-1/2 sm:w-1/2 md:w-1/4 flex flex-col gap-4 mb-6">
+                            <h6>For Consumers</h6>
+                            <ul class="flex flex-col gap-2">
+                                <!-- list -->
+                                <li><a class="inline-block hover:text-green-600" href="#">Payments</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Shipping</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Product Returns</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">FAQ</a></li>
+                                <li><a class="inline-block" href="#">Shop Checkout</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-1/2 sm:w-1/2 md:w-1/4 flex flex-col gap-4">
+                            <h6>Become a Shopper</h6>
+                            <ul class="flex flex-col gap-2">
+                                <!-- list -->
+                                <li><a class="inline-block hover:text-green-600" href="#">Shopper Opportunities</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Become a Shopper</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Earnings</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Ideas &amp; Guides</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">New Retailers</a></li>
+                            </ul>
+                        </div>
+                        <div class="w-1/2 sm:w-1/2 md:w-1/4 flex flex-col gap-4">
+                            <h6>Freshcart programs</h6>
+                            <ul class="flex flex-col gap-2">
+                                <!-- list -->
+                                <li><a class="inline-block hover:text-green-600" href="#">Freshcart programs</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Gift Cards</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Promos &amp; Coupons</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Freshcart Ads</a></li>
+                                <li><a class="inline-block hover:text-green-600" href="#">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t py-4 border-gray-300">
+                <div class="gap-y-4 flex flex-wrap items-center justify-center lg:justify-start">
+                    <div class="lg:w-2/5 lg:text-left text-center">
+                        <div class="flex md:flex-row flex-col gap-3 md:gap-6 items-center">
+                            <div class="text-gray-900">Payment Partners</div>
+                            <ul class="flex items-center flex-row gap-4">
+                                <li>
+                                    <a href="#"><img alt="amazon pay" src="~/images/payment/amazonpay.svg" /></a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img alt="american express"
+                                             src="~/images/payment/american-express.svg" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="mastercard" src="~/images/payment/mastercard.svg" /></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="paypal" src="~/images/payment/paypal.svg" /></a>
+                                </li>
+                                <li>
+                                    <a href="#"><img alt="visa" src="~/images/payment/visa.svg" /></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="lg:w-3/5 flex justify-end">
+                        <div class="flex flex-col md:flex-row items-center gap-3 md:gap-6">
+                            <div class="text-gray-900">Get deliveries with FreshCart</div>
+                            <ul class="flex flex-row gap-2">
+                                <li>
+                                    <a href="#">
+                                        <img alt="" src="~/images/appbutton/appstore-btn.svg"
+                                             style="width: 140px" />
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img alt="" src="~/images/appbutton/googleplay-btn.svg"
+                                             style="width: 140px" />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t py-4 border-gray-300">
+                <div class="flex flex-col md:flex-row items-center gap-3">
+                    <div class="w-full">
+                        <span class="text-sm text-gray-500">
+                            ©
+                            <span id="copyright">
+                                <script>
+                                                                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
+                                </script>
+                            </span>
+                            FreshCart TailwindCSS eCommerce HTML Template. Powered by
+                            <a class="text-green-600" href="https://codescandy.com/" target="_blank">Codescandy</a>
+                            <span class="text-nowrap">
+                                ~ Distributed by
+                                <a class="text-green-600" href="https://ThemeWagon.com/"
+                                   target="_blank">ThemeWagon</a>
+                            </span>
+                            .
+                        </span>
+                    </div>
+                    <div class="md:w-1/2 flex md:justify-end items-center">
+                        <div class="flex flex-row gap-5 items-center">
+                            <div class="text-gray-500">Follow us on</div>
+                            <ul class="flex items-center justify-end text-sm gap-1">
+                                <li>
+                                    <a class="inline-flex justify-center items-center align-middle text-center select-none border font-normal whitespace-no-wrap rounded leading-normal no-underline h-8 w-8 border-gray-300 hover:border-green-600 hover:text-green-600 transition ease-in-out"
+                                       href="#">
+                                        <i class="ti ti-brand-facebook inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="inline-flex justify-center items-center align-middle text-center select-none border font-normal whitespace-no-wrap rounded leading-normal no-underline h-8 w-8 border-gray-300 hover:border-green-600 hover:text-green-600 transition ease-in-out"
+                                       href="#">
+                                        <i class="ti ti-brand-x inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="inline-flex justify-center items-center align-middle text-center select-none border font-normal whitespace-no-wrap rounded leading-normal no-underline h-8 w-8 border-gray-300 hover:border-green-600 hover:text-green-600 transition ease-in-out"
+                                       href="#">
+                                        <i class="ti ti-brand-instagram inline-block"
+                                           style="font-size:16px; line-height:16px;"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer> <!-- Modal -->
+    <div aria-hidden="true" class="modal fade" id="quickViewModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered lg:min-w-[1140px]">
+            <div class="modal-content">
+                <div class="modal-body p-8">
+                    <div class="absolute top-0 right-0 p-3">
+                        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+                            <i class="ti ti-x inline-block" style="font-size:24px; line-height:24px;"></i>
+                        </button>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="md:w-1/2">
+                            <!-- img slide -->
+                            <div class="product productModal" id="productModal">
+                                <div class="zoom" onmousemove="zoom(event)"
+                                     style="background-image: url(./assets/images/products/product-single-img-1.jpg)">
+                                    <!-- img -->
+                                    <!-- img -->
+                                    <img alt="" src="./assets/images/products/product-single-img-1.jpg" />
+                                </div>
+                                <div>
+                                    <div class="zoom" onmousemove="zoom(event)"
+                                         style="background-image: url(./assets/images/products/product-single-img-2.jpg)">
+                                        <!-- img -->
+                                        <img alt="" src="./assets/images/products/product-single-img-2.jpg" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="zoom" onmousemove="zoom(event)"
+                                         style="background-image: url(./assets/images/products/product-single-img-3.jpg)">
+                                        <!-- img -->
+                                        <img alt="" src="./assets/images/products/product-single-img-3.jpg" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="zoom" onmousemove="zoom(event)"
+                                         style="background-image: url(./assets/images/products/product-single-img-4.jpg)">
+                                        <!-- img -->
+                                        <img alt="" src="./assets/images/products/product-single-img-4.jpg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product tools -->
+                            <div class="product-tools">
+                                <div class="thumbnails flex gap-3" id="productModalThumbnails">
+                                    <div class="w-1/4">
+                                        <div class="thumbnails-img">
+                                            <!-- img -->
+                                            <img alt="" src="./assets/images/products/product-single-img-1.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="w-1/4">
+                                        <div class="thumbnails-img">
+                                            <!-- img -->
+                                            <img alt="" src="./assets/images/products/product-single-img-2.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="w-1/4">
+                                        <div class="thumbnails-img">
+                                            <!-- img -->
+                                            <img alt="" src="./assets/images/products/product-single-img-3.jpg" />
+                                        </div>
+                                    </div>
+                                    <div class="w-1/4">
+                                        <div class="thumbnails-img">
+                                            <!-- img -->
+                                            <img alt="" src="./assets/images/products/product-single-img-4.jpg" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2 pr-4 pl-4">
+                            <div class="lg:pl-10 mt-6 md:mt-0">
+                                <div class="flex flex-col gap-4">
+                                    <!-- content -->
+                                    <a class="block text-green-600" href="#">Bakery Biscuits</a>
+                                    <!-- heading -->
+                                    <h1>Napolitanke Ljesnjak</h1>
+                                    <div class="flex flex-col gap-2">
+                                        <div class="flex items-center">
+                                            <!-- rating -->
+                                            <!-- rating -->
+                                            <small class="text-yellow-500 inline-flex items-center">
+                                                <i class="ti ti-star-filled inline-block"
+                                                   style="font-size:14px; line-height:14px;"></i>
+                                                <i class="ti ti-star-filled inline-block"
+                                                   style="font-size:14px; line-height:14px;"></i>
+                                                <i class="ti ti-star-filled inline-block"
+                                                   style="font-size:14px; line-height:14px;"></i>
+                                                <i class="ti ti-star-filled inline-block"
+                                                   style="font-size:14px; line-height:14px;"></i>
+                                                <i class="ti ti-star-filled inline-block"
+                                                   style="font-size:14px; line-height:14px;"></i>
+                                            </small>
+                                            <a class="text-green-600" href="#">(30 reviews)</a>
+                                        </div>
+                                        <div class="text-md">
+                                            <span class="text-gray-900 font-semibold">$18</span>
+                                            <span class="line-through text-gray-500">$24</span>
+                                            <span><small class="text-red-600">26% Off</small></span>
+                                        </div>
+                                    </div>
+                                    <!-- hr -->
+                                    <div class="flex flex-col gap-6">
+                                        <hr />
+                                        <div>
+                                            <button class="btn inline-flex items-center gap-x-2 bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                                    type="button">
+                                                250g
+                                            </button>
+                                            <!-- btn -->
+                                            <button class="btn inline-flex items-center gap-x-2 bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                                    type="button">
+                                                500g
+                                            </button>
+                                            <!-- btn -->
+                                            <button class="btn inline-flex items-center gap-x-2 bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                                    type="button">
+                                                1kg
+                                            </button>
+                                        </div>
+                                        <div>
+                                            <!-- input -->
+                                            <div class="w-1/3 md:w-1/4 lg:w-1/5">
+                                                <!-- input -->
+                                                <div class="input-group input-spinner rounded-lg flex justify-between items-center">
+                                                    <input class="button-minus w-8 py-1 border-r cursor-pointer border-gray-300"
+                                                           data-field="quantity" type="button" value="-" />
+                                                    <input class="quantity-field w-9 px-2 text-center h-7 border-0 bg-transparent"
+                                                           max="10" name="quantity" step="1" type="number" value="1" />
+                                                    <input class="button-plus w-8 py-1 border-l cursor-pointer border-gray-300"
+                                                           data-field="quantity" type="button" value="+" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap justify-start gap-2 items-center">
+                                            <div class="lg:w-1/3 md:w-2/5 w-full grid">
+                                                <!-- button -->
+                                                <!-- btn -->
+                                                <button class="btn bg-green-600 text-white border-green-600 disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-green-700 hover:border-green-700 active:bg-green-700 active:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300 justify-center"
+                                                        type="button">
+                                                    <i class="ti ti-plus inline-block"
+                                                       style="font-size:12px; line-height:12px;"></i>
+                                                    Add to cart
+                                                </button>
+                                            </div>
+                                            <div class="md:w-1/3 w-full">
+                                                <!-- btn -->
+                                                <a class="mr-1 btn inline-flex items-center gap-x-2 px-0 h-10 w-10 justify-center bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                                   href="#">
+                                                    <i class="ti ti-arrows-exchange inline-block"
+                                                       style="font-size:20px; line-height:20px;"></i>
+                                                </a>
+                                                <a class="btn inline-flex items-center gap-x-2 px-0 h-10 w-10 justify-center bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                                   href="#">
+                                                    <i class="ti ti-heart inline-block"
+                                                       style="font-size:20px; line-height:20px;"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <!-- hr -->
+                                        <hr />
+                                    </div>
+                                    <div>
+                                        <!-- table -->
+                                        <table class="text-left w-full">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="px-6 py-3">Product Code:</td>
+                                                    <td class="px-6 py-3">FBB00255</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-3">Availability:</td>
+                                                    <td class="px-6 py-3">In Stock</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-3">Type:</td>
+                                                    <td class="px-6 py-3">Fruits</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="px-6 py-3">Shipping:</td>
+                                                    <td class="px-6 py-3">
+                                                        <small>
+                                                            01 day shipping.
+                                                            <span class="text-gray-700">( Free pickup today)</span>
+                                                        </small>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div>
+                                        <!-- dropdown -->
+                                        <div class="relative">
+                                            <a aria-expanded="false"
+                                               class="dropdown-toggle btn inline-flex items-center gap-x-2 bg-white text-gray-800 border-gray-300 border disabled:opacity-50 disabled:pointer-events-none hover:text-white hover:bg-gray-700 hover:border-gray-700 active:bg-gray-700 active:border-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-300"
+                                               data-bs-toggle="dropdown" href="#" role="button">
+                                                Share
+                                            </a>
+                                            <ul class="dropdown-menu">
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="ti ti-brand-facebook inline-block"
+                                                           style="font-size:18px; line-height:18px;"></i>
+                                                        Facebook
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="ti ti-brand-x inline-block"
+                                                           style="font-size:18px; line-height:18px;"></i>
+                                                        Twitter
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="dropdown-item" href="#">
+                                                        <i class="ti ti-brand-instagram inline-block"
+                                                           style="font-size:18px; line-height:18px;"></i>
+                                                        Instagram
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Libs JS -->
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@6.2.5/dist/simplebar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Original template JS -->
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/aspnet-friendly.js"></script>
+    <script src="assets/js/vendors/countdown.js"></script>
+    <script src="assets/js/vendors/tns-slider.js"></script>
+    <script src="assets/js/vendors/zoom.js"></script>
+    <script src="assets/js/vendors/language.js"></script>
+    <!-- Swiper JS -->
+    <script src="assets/js/vendors/swiper.js"></script>
+    <script src="assets/js/vendors/validation.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+
+</body>
+</html>

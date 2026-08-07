@@ -1,0 +1,510 @@
+﻿@{
+    ViewData["Title"] = "Products";
+}
+
+
+<div class="container py-4">
+
+
+    <!-- Top Header -->
+
+    <div class="row align-items-center mb-4">
+
+
+        <div class="col-lg-7">
+
+            <h2 class="fw-bold mb-1">
+                Shop All Products
+            </h2>
+
+            <p class="text-muted mb-0">
+                Fresh groceries delivered to your door
+            </p>
+
+        </div>
+
+        <div class="col-lg-5">
+            <div class="d-flex">
+
+                <input type="text"
+                       class="form-control rounded-start-pill"
+                       placeholder="Search products..."
+                       style="height:45px;">
+
+
+                <button class="btn btn-success rounded-end-pill px-4"
+                        style="height:45px;">
+                    Search
+                </button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="row g-4">
+
+
+
+        <!-- Sidebar -->
+
+
+        <div class="col-lg-3">
+
+
+            <div class="card shadow-sm border-0">
+
+
+                <div class="card-body">
+
+
+                    <h5 class="fw-bold mb-4">
+                        Categories
+                    </h5>
+
+
+
+                    <ul class="list-group list-group-flush">
+
+
+                        <li class="list-group-item px-0">
+                            Fruits
+                        </li>
+
+
+                        <li class="list-group-item px-0">
+                            Vegetables
+                        </li>
+
+
+                        <li class="list-group-item px-0">
+                            Dairy Products
+                        </li>
+
+
+                        <li class="list-group-item px-0">
+                            Drinks
+                        </li>
+
+
+                        <li class="list-group-item px-0">
+                            Snacks
+                        </li>
+
+
+                    </ul>
+
+
+
+
+                    <hr>
+
+
+
+
+                    <h5 class="fw-bold">
+                        Price
+                    </h5>
+
+
+                    <input type="range"
+                           class="form-range">
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- Product Grid -->
+
+
+        <div class="col-lg-9">
+
+
+            <div class="d-flex justify-content-between mb-3">
+
+
+                <span class="text-muted">
+                    Showing 12 Products
+                </span>
+
+
+
+                <select class="form-select"
+                        style="width:180px;">
+
+                    <option>
+                        Sort By
+                    </option>
+
+                    <option>
+                        Price Low
+                    </option>
+
+                    <option>
+                        Price High
+                    </option>
+
+                </select>
+
+
+            </div>
+
+
+
+
+
+            <div class="row g-4">
+
+
+
+
+
+                <!-- Product Card -->
+                @foreach (var item in ViewBag.products)
+                {
+                    <div class="col-xl-4 col-md-6">
+
+
+                        <div class="card h-100 shadow-sm border-0">
+
+
+                            <div class="card-body p-3">
+
+
+                                <span class="badge bg-danger">
+                                    Sale
+                                </span>
+
+
+
+                                <div class="text-center my-3"
+                                     style="height:170px;">
+
+
+                                    <img src="~/All_Images/Products/@item.Image"
+                                         class="img-fluid h-100"
+                                         style="object-fit:contain;">
+
+
+                                </div>
+
+
+
+
+
+                                <small class="text-muted">
+                                    @item.categories.CategoryName
+                                </small>
+
+
+
+                                <h5 class="fw-bold mt-2">
+                                    @item.ProductName
+                                </h5>
+
+
+
+
+                                <div class="mb-2">
+
+                                    <span class="text-warning">
+                                        ★★★★★
+                                    </span>
+
+                                    <small class="text-muted">
+                                        (120)
+                                    </small>
+
+                                </div>
+
+
+
+
+
+                                <div class="d-flex justify-content-between align-items-center">
+
+
+                                    <h5 class="text-success fw-bold mb-0">
+                                        @item.Price
+                                    </h5>
+
+
+
+                                    <button class="btn btn-success btn-sm">
+
+                                        <i class="ti ti-plus"></i>
+                                        Add
+
+                                    </button>
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+                }
+
+
+
+
+
+
+
+                <!-- Product Card -->
+
+
+                <div class="col-xl-4 col-md-6">
+
+
+                    <div class="card h-100 shadow-sm border-0">
+
+
+                        <div class="card-body p-3">
+
+
+                            <div class="text-center my-3"
+                                 style="height:170px;">
+
+
+                                <img src="~/All_Images/Products/banana.jpg"
+                                     class="img-fluid h-100"
+                                     style="object-fit:contain;">
+
+
+                            </div>
+
+
+
+                            <small class="text-muted">
+                                Fruits
+                            </small>
+
+
+                            <h5 class="fw-bold mt-2">
+                                Fresh Banana
+                            </h5>
+
+
+
+                            <div class="mb-2">
+
+                                <span class="text-warning">
+                                    ★★★★☆
+                                </span>
+
+
+                                <small class="text-muted">
+                                    (85)
+                                </small>
+
+                            </div>
+
+
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+
+                                <h5 class="text-success fw-bold mb-0">
+                                    $3.50
+                                </h5>
+
+
+                                <button class="btn btn-success btn-sm">
+                                    Add
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+
+                <!-- Product Card -->
+
+
+                <div class="col-xl-4 col-md-6">
+
+
+                    <div class="card h-100 shadow-sm border-0">
+
+
+                        <div class="card-body p-3">
+
+
+                            <div class="text-center my-3"
+                                 style="height:170px;">
+
+
+                                <img src="~/All_Images/Products/orange.jpg"
+                                     class="img-fluid h-100"
+                                     style="object-fit:contain;">
+
+
+                            </div>
+
+
+
+                            <small class="text-muted">
+                                Fruits
+                            </small>
+
+
+                            <h5 class="fw-bold mt-2">
+                                Fresh Orange
+                            </h5>
+
+
+
+                            <div class="mb-2">
+
+                                <span class="text-warning">
+                                    ★★★★★
+                                </span>
+
+                            </div>
+
+
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+
+                                <h5 class="text-success fw-bold mb-0">
+                                    $4.00
+                                </h5>
+
+
+                                <button class="btn btn-success btn-sm">
+                                    Add
+                                </button>
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!-- Pagination -->
+
+
+    <div class="d-flex justify-content-center mt-5">
+
+
+        <nav>
+
+
+            <ul class="pagination">
+
+
+                <li class="page-item">
+                    <a class="page-link">
+                        Previous
+                    </a>
+                </li>
+
+
+                <li class="page-item active">
+                    <a class="page-link">
+                        1
+                    </a>
+                </li>
+
+
+                <li class="page-item">
+                    <a class="page-link">
+                        2
+                    </a>
+                </li>
+
+
+                <li class="page-item">
+                    <a class="page-link">
+                        3
+                    </a>
+                </li>
+
+
+                <li class="page-item">
+                    <a class="page-link">
+                        Next
+                    </a>
+                </li>
+
+
+            </ul>
+
+
+        </nav>
+
+
+    </div>
+
+
+
+</div>

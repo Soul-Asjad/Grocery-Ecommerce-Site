@@ -1,0 +1,191 @@
+wwwroot\All_Images\Categories\11217810-396f-44b3-9f34-47e98690f967 _ category-instant-food.jpg
+wwwroot\All_Images\Categories\32860433-92af-4ffc-9d85-59a8d9fcfbb1 _ category-bakery-biscuits.jpg
+wwwroot\All_Images\Categories\3b985a42-bd22-4691-807b-540df42481c9 _ category-fruits-vegetables.jpg
+wwwroot\All_Images\Categories\3e1e7097-e66a-4af2-85be-386b3bf2e280_Chicken, Meat & Fish.jpg
+wwwroot\All_Images\Categories\48b2e74f-2489-4f18-a2c3-14b4460c4028_cold drink and juice.jpg
+wwwroot\All_Images\Categories\4b5e381c-2565-42e7-a975-981f56dfd6d8 _ category-dairy-bread-eggs.jpg
+wwwroot\All_Images\Categories\4e3aaf57-9e0c-4025-b30a-6edda0f84482_cold drink and juice.jpg
+wwwroot\All_Images\Categories\504e0372-c786-4627-bb94-fef178990b15_Bakery & Biscuits.jpg
+wwwroot\All_Images\Categories\58f23187-4cad-45e9-8a88-e48cf854afdb _ category-cold-drinks-juices.jpg
+wwwroot\All_Images\Categories\5f7adb72-9cf7-493b-9556-0667666aa8f3_Dairy, Bread & Eggs.jpg
+wwwroot\All_Images\Categories\8f84d925-d91e-4115-a64e-86ea00c01a7b_Fruits and Vegetables.jpg
+wwwroot\All_Images\Categories\91268747-fa36-4e0f-b641-9fda6079cd7f_cold drink and juice.jpg
+wwwroot\All_Images\Categories\b8e614c3-31e6-4a9e-b894-3dda5c5511c2_Breakfast & Instant Food.jpg
+wwwroot\All_Images\Categories\c58b2a3f-6f78-40ab-8223-b31b3d954048_Snacks & Munchies.jpg
+wwwroot\All_Images\Categories\c842df56-102f-4bbc-9517-a9d447f18415 _ category-snack-munchies.jpg
+wwwroot\All_Images\Categories\cbfb0e72-8702-4492-be79-8bfba11ff527 _ category-chicken-meat-fish.jpg
+wwwroot\All_Images\Products\0b50734e-2d5e-43d9-9308-fecd88a96a43 _ product-img-7.jpg
+wwwroot\All_Images\Products\1255bae6-17cc-4472-b13a-558bba9648f3 _ Milk.jpg
+wwwroot\All_Images\Products\1e9ee759-6895-4f2e-9c8c-cde4b90d06d7 _ Potato Chips.jpg
+wwwroot\All_Images\Products\2242042d-45d3-417b-9ce8-198a91021941 _ product-img-8.jpg
+wwwroot\All_Images\Products\3096db43-0bcf-4c14-8c09-812c8acdfe23 _ instant Oatmeal.jpg
+wwwroot\All_Images\Products\48179da9-9159-43d9-a6bc-f4b1b074b1bd _ product-img-6.jpg
+wwwroot\All_Images\Products\545275d3-9c0f-4250-bb2b-63f6fdd8ce35 _ Bananas.jpg
+wwwroot\All_Images\Products\59f52b7f-f632-4313-b4ab-9ee4f91a89dc _ Butter Croissants.jpg
+wwwroot\All_Images\Products\5cc2e901-4063-4848-8741-e1524c5b12f1 _ Potato Chips.jpg
+wwwroot\All_Images\Products\624318c6-6369-4da1-8975-70acdb13b153 _ product-img-1.jpg
+wwwroot\All_Images\Products\6f3fec12-3d75-4e5e-a973-53140630d532 _ product-img-3.jpg
+wwwroot\All_Images\Products\91548589-cd8e-4462-97e0-2153779cc5c8 _ product-img-2.jpg
+wwwroot\All_Images\Products\9ce78fe6-1d7f-481a-af98-316103be627f _ boneless Chicken Breast.jpg
+wwwroot\All_Images\Products\b3ebdeaf-d04a-4760-a435-013662ad5ef2 _ product-img-5.jpg
+wwwroot\All_Images\Products\b765e1b3-bc98-4028-b4a1-b83b75a4111e _ product-img-8.jpg
+wwwroot\All_Images\Products\b7e2e6a0-f1dd-4cba-a365-fb52f7a5bbc7 _ product-img-4.jpg
+wwwroot\All_Images\Products\d29dbe6c-55d5-4317-8567-aab2d8fd9063 _ product-img-10.jpg
+wwwroot\All_Images\Products\d4d83a6e-ed4d-477b-afb7-dd37c06d4669 _ orange juice.jpg
+wwwroot\All_Images\Products\ee667d57-ecd7-4a23-be82-4ef32136e123 _ product-img-9.jpg
+wwwroot\All_Images\Products\fa109260-34eb-4f3b-8fc2-23a1581c095c _ orange juice.jpg
+wwwroot\css\site.css
+wwwroot\css\theme.css
+wwwroot\favicon.ico
+wwwroot\images\appbutton\appstore-btn.svg
+wwwroot\images\appbutton\googleplay-btn.svg
+wwwroot\images\avatar\avatar-1.jpg
+wwwroot\images\avatar\avatar-10.jpg
+wwwroot\images\avatar\avatar-11.jpg
+wwwroot\images\avatar\avatar-12.jpg
+wwwroot\images\avatar\avatar-13.jpg
+wwwroot\images\avatar\avatar-14.jpg
+wwwroot\images\avatar\avatar-15.jpg
+wwwroot\images\avatar\avatar-16.jpg
+wwwroot\images\avatar\avatar-17.jpg
+wwwroot\images\avatar\avatar-18.jpg
+wwwroot\images\avatar\avatar-19.jpg
+wwwroot\images\avatar\avatar-2.jpg
+wwwroot\images\avatar\avatar-20.jpg
+wwwroot\images\avatar\avatar-21.jpg
+wwwroot\images\avatar\avatar-3.jpg
+wwwroot\images\avatar\avatar-4.jpg
+wwwroot\images\avatar\avatar-5.jpg
+wwwroot\images\avatar\avatar-6.jpg
+wwwroot\images\avatar\avatar-7.jpg
+wwwroot\images\avatar\avatar-8.jpg
+wwwroot\images\avatar\avatar-9.jpg
+wwwroot\images\avatar\avatar.jpg
+wwwroot\images\banner\banner-deal.jpg
+wwwroot\images\banner\grocery-banner-2.jpg
+wwwroot\images\banner\grocery-banner.png
+wwwroot\images\banner\modal_img.jpg
+wwwroot\images\category\category-1.jpg
+wwwroot\images\category\category-2.jpg
+wwwroot\images\category\category-3.jpg
+wwwroot\images\category\category-4.jpg
+wwwroot\images\category\category-5.jpg
+wwwroot\images\category\category-atta-rice-dal.jpg
+wwwroot\images\category\category-baby-care.jpg
+wwwroot\images\category\category-bakery-biscuits.jpg
+wwwroot\images\category\category-chicken-meat-fish.jpg
+wwwroot\images\category\category-cleaning-essentials.jpg
+wwwroot\images\category\category-cold-drinks-juices.jpg
+wwwroot\images\category\category-dairy-bread-eggs.jpg
+wwwroot\images\category\category-fruits-vegetables.jpg
+wwwroot\images\category\category-instant-food.jpg
+wwwroot\images\category\category-pet-care.jpg
+wwwroot\images\category\category-snack-munchies.jpg
+wwwroot\images\category\category-tea-coffee-drinks.jpg
+wwwroot\images\favicon\favicon.ico
+wwwroot\images\icons\clock.svg
+wwwroot\images\icons\gift.svg
+wwwroot\images\icons\package.svg
+wwwroot\images\icons\refresh-cw.svg
+wwwroot\images\logo\freshcart-logo.svg
+wwwroot\images\logo\freshcart-white-logo.svg
+wwwroot\images\marketing\chrome.png
+wwwroot\images\marketing\edge.png
+wwwroot\images\marketing\firefox.png
+wwwroot\images\marketing\opera.png
+wwwroot\images\marketing\safari.png
+wwwroot\images\marketing\tailwind-freshcart-template.jpg
+wwwroot\images\payment\amazonpay.svg
+wwwroot\images\payment\american-express.svg
+wwwroot\images\payment\mastercard.svg
+wwwroot\images\payment\paypal.svg
+wwwroot\images\payment\visa.svg
+wwwroot\images\products\product-img-1.jpg
+wwwroot\images\products\product-img-10.jpg
+wwwroot\images\products\product-img-11.jpg
+wwwroot\images\products\product-img-12.jpg
+wwwroot\images\products\product-img-13.jpg
+wwwroot\images\products\product-img-14.jpg
+wwwroot\images\products\product-img-15.jpg
+wwwroot\images\products\product-img-16.jpg
+wwwroot\images\products\product-img-17.jpg
+wwwroot\images\products\product-img-18.jpg
+wwwroot\images\products\product-img-19.jpg
+wwwroot\images\products\product-img-2.jpg
+wwwroot\images\products\product-img-3.jpg
+wwwroot\images\products\product-img-4.jpg
+wwwroot\images\products\product-img-5.jpg
+wwwroot\images\products\product-img-6.jpg
+wwwroot\images\products\product-img-7.jpg
+wwwroot\images\products\product-img-8.jpg
+wwwroot\images\products\product-img-9.jpg
+wwwroot\images\products\product-single-img-1.jpg
+wwwroot\images\products\product-single-img-2.jpg
+wwwroot\images\products\product-single-img-3.jpg
+wwwroot\images\products\product-single-img-4.jpg
+wwwroot\images\slider\slide-1.jpg
+wwwroot\images\slider\slider-2.jpg
+wwwroot\images\slider\slider-image-1.jpg
+wwwroot\images\slider\slider-image-2.jpg
+wwwroot\images\slider\slider-image-3.jpg
+wwwroot\js\site.js
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css
+wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js
+wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map
+wwwroot\lib\bootstrap\LICENSE
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
+wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
+wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\lib\jquery-validation\dist\additional-methods.js
+wwwroot\lib\jquery-validation\dist\additional-methods.min.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.js
+wwwroot\lib\jquery-validation\dist\jquery.validate.min.js
+wwwroot\lib\jquery-validation\LICENSE.md
+wwwroot\lib\jquery\dist\jquery.js
+wwwroot\lib\jquery\dist\jquery.min.js
+wwwroot\lib\jquery\dist\jquery.min.map
+wwwroot\lib\jquery\dist\jquery.slim.js
+wwwroot\lib\jquery\dist\jquery.slim.min.js
+wwwroot\lib\jquery\dist\jquery.slim.min.map
+wwwroot\lib\jquery\LICENSE.txt

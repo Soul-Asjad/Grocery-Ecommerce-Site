@@ -1,0 +1,101 @@
+@model IEnumerable<Grocery.Models.Products>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Add_product">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiscountPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StockQuantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Unit)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isfeatured)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Isactive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Createdat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.categories)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.CategoryID)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ProductName)
+            </td>
+            <td>
+                @string.Join(" ",item.Description.Split( ' ' ).Take(8))...
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.DiscountPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.StockQuantity)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Unit)
+            </td>
+            <td>
+                    <img src="~/All_Images/Products/@Html.DisplayFor(model => item.Image)" style="height:60px; width:80px;" />
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Isfeatured)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Isactive)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.Createdat)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.categories)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

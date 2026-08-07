@@ -1,0 +1,557 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\home\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\home\\product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\products.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\categories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\home\\productdetails.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\products\\add_product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\products\\add_product.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\wwwroot\\css\\theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\wwwroot\\css\\theme.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\products\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\products\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\categories\\view_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\categories\\view_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\products\\view_products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\products\\view_products.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\categories\\add_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\categories\\add_category.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\productimages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\reviews.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\user_login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\payments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\payments.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\categories\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\user\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\user\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\user\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\models\\addresses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\models\\addresses.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\migrations\\20260727194157_database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\migrations\\20260727194157_database.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|c:\\users\\alian\\onedrive\\desktop\\fresh_cart\\grocery\\grocery\\views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4A16E421-5210-52F5-712F-F42E9497DF9B}|Grocery\\Grocery.csproj|solutionrelative:grocery\\views\\categories\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\Product.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Home\\Product.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\Product.cshtml*",
+              "RelativeToolTip": "Grocery\\Views\\Home\\Product.cshtml*",
+              "ViewState": "AgIAAOcAAAAAAAAAAAAAANkAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-07T16:26:58.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Products.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Products.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\Products.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Products.cs",
+              "RelativeToolTip": "Grocery\\Models\\Products.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAACgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T14:39:49.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Grocery\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Grocery\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAuwBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-18T06:24:23.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductDetails.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Home\\ProductDetails.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\ProductDetails.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Home\\ProductDetails.cshtml",
+              "ViewState": "AgIAADcBAAAAAAAAAAAYwEQBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-08-05T03:30:50.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Grocery\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Grocery\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T05:13:37.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPQCAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-15T04:17:52.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Categories.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Categories.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\Categories.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Categories.cs",
+              "RelativeToolTip": "Grocery\\Models\\Categories.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T19:48:54.995Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Details.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Products\\Details.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Details.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Products\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T16:24:45.745Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Add_product.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Add_product.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Products\\Add_product.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Add_product.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Products\\Add_product.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T15:19:15.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "theme.css",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\css\\theme.css",
+              "RelativeDocumentMoniker": "Grocery\\wwwroot\\css\\theme.css",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\css\\theme.css",
+              "RelativeToolTip": "Grocery\\wwwroot\\css\\theme.css",
+              "ViewState": "AgIAABADAAAAAAAAAAAAACQDAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2026-07-28T17:40:48.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Grocery\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Grocery\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAmwHoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T14:37:28.071Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-15T05:01:08.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Grocery\\Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Grocery\\Controllers\\CategoriesController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAEgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T19:43:30.41Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Admin\\Index.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Admin\\Index.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Admin\\Index.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Admin\\Index.cshtml",
+              "ViewState": "AgIAAH0BAAAAAAAAAAAAAAABAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-18T05:07:24.239Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Grocery\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Grocery\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T05:06:26.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Categories\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Edit.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Categories\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T18:22:58.176Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Grocery\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Grocery\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2026-07-28T17:38:52.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Products\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\Edit.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Products\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T15:17:45.077Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "View_category.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\View_category.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Categories\\View_category.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\View_category.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Categories\\View_category.cshtml",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAiwCsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-27T20:38:56.854Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Add_category.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Add_category.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Categories\\Add_category.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Add_category.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Categories\\Add_category.cshtml",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAACoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-27T19:48:22.63Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "View_Products.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\View_Products.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Products\\View_Products.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Products\\View_Products.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Products\\View_Products.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-28T15:46:56.324Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ProductImages.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\ProductImages.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\ProductImages.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\ProductImages.cs",
+              "RelativeToolTip": "Grocery\\Models\\ProductImages.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T15:40:38.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Payments.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Payments.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\Payments.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Payments.cs",
+              "RelativeToolTip": "Grocery\\Models\\Payments.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T14:39:57.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "User_login.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\User_login.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\User_login.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\User_login.cs",
+              "RelativeToolTip": "Grocery\\Models\\User_login.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T14:40:19.603Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Reviews.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Reviews.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\Reviews.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Reviews.cs",
+              "RelativeToolTip": "Grocery\\Models\\Reviews.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-28T15:07:46.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Details.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\Categories\\Details.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\Categories\\Details.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\Categories\\Details.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB0AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-27T21:22:58.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "20260727194157_database.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Migrations\\20260727194157_database.cs",
+              "RelativeDocumentMoniker": "Grocery\\Migrations\\20260727194157_database.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Migrations\\20260727194157_database.cs",
+              "RelativeToolTip": "Grocery\\Migrations\\20260727194157_database.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T19:41:57.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\User\\Login.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\User\\Login.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\User\\Login.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\User\\Login.cshtml",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-27T20:24:27.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Signup.cshtml",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\User\\Signup.cshtml",
+              "RelativeDocumentMoniker": "Grocery\\Views\\User\\Signup.cshtml",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Views\\User\\Signup.cshtml",
+              "RelativeToolTip": "Grocery\\Views\\User\\Signup.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-07-27T20:24:34.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Addresses.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Addresses.cs",
+              "RelativeDocumentMoniker": "Grocery\\Models\\Addresses.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Models\\Addresses.cs",
+              "RelativeToolTip": "Grocery\\Models\\Addresses.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAA5wBoAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T19:40:23.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\appsettings.json",
+              "RelativeDocumentMoniker": "Grocery\\appsettings.json",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\appsettings.json",
+              "RelativeToolTip": "Grocery\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-27T19:38:48.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Program.cs",
+              "RelativeDocumentMoniker": "Grocery\\Program.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Program.cs",
+              "RelativeToolTip": "Grocery\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T06:53:27.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Grocery\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\alian\\OneDrive\\Desktop\\Fresh_Cart\\Grocery\\Grocery\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Grocery\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAkwEMAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-12T21:57:46.147Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

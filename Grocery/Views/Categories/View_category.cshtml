@@ -1,0 +1,59 @@
+@model IEnumerable<Grocery.Models.Categories>
+
+@{
+    ViewData["Title"] = "View_category";
+}
+
+<h1>Categoriy List</h1>
+
+<p>
+    <a asp-action="Add_category">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.isactive)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.createdat)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(model => item.CategoryName)
+            </td>
+            <td>
+                @string.Join(" ", item.Description.Split(' ').Take(8))...
+            </td>
+            <td>
+                    <img src="~/All_Images/Categories/@Html.DisplayFor(model => item.image)" style="height:80px; width:50px;"><img />
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.isactive)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.createdat)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Categoryid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Categoryid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Categoryid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
