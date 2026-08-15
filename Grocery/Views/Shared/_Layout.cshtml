@@ -72,7 +72,7 @@
                 <div class="container">
                     <div class="flex flex-wrap w-full items-center justify-between">
                         <div class="lg:w-1/6 md:w-1/2 w-2/5">
-                            <a class="navbar-brand" href="index.html">
+                            <a class="navbar-brand" asp-action="index" asp-controller="Home">
                                 <img alt=""
                                      src="~/images/logo/freshcart-logo.svg" />
                             </a>
@@ -226,10 +226,10 @@
                             <div>
                                 <ul class="navbar-nav lg:flex gap-3 lg:items-center">
                                     <li class="nav-item dropdown w-full lg:w-auto">
-                                        <a class="nav-link" href="index.html" role="button">Home</a>
+                                        <a class="nav-link" asp-action="index" asp-controller="Home" role="button">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#">
+                                        <a class="nav-link" asp-controller="Home" asp-action="Product">
                                             Products
                                         </a>
                                     </li>

@@ -35,7 +35,7 @@ namespace Grocery.Controllers
                 return NotFound();
             }
 
-            var randomproducts = this.context.Products.Where(x => x.ProductID != id).OrderBy(x => Guid.NewGuid()).Take(6).ToList();
+            var randomproducts = this.context.Products.Where(x => x.ProductID != id).OrderBy(x => Guid.NewGuid()).Take(4).ToList();
 
 
             ViewBag.randomproducts = randomproducts;
@@ -44,13 +44,22 @@ namespace Grocery.Controllers
             return View(data);
         }
 
-        public IActionResult Product()
+        public IActionResult Product(int page = 1)
         {
+            int page_size = 10;
 
-            ViewBag.products = this.context.Products.Include(x => x.categories).ToList(); 
+            ViewBag.products = this.context.Products.Include(x => x.categories).Skip((page-1) * page_size).Take(page_size).ToList();
+
+            ViewBag.CurrentPage = page;
+
+            int total_product = this.context.Products.Count();
+            ViewBag.TotalPages = (int)Math.Ceiling((double)total_product / page_size);
 
             return View();
         }
+
+
+        
 
     }
 }

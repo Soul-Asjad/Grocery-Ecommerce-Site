@@ -1,3 +1,4 @@
+```cshtml
 @model Grocery.Models.Products
 
 @{
@@ -29,12 +30,9 @@
 
         <div class="col-lg-6">
 
-            <div class="border rounded p-4 text-center">
+            <div class="border d-flex justify-content-center rounded p-4 text-center">
 
-                <img src="~/All_Images/Products/@Model.Image"
-                     class="img-fluid"
-                     style="height:450px; object-fit:contain;"
-                     alt="@Model.ProductName">
+                <img src="~/All_Images/Products/@Model.Image" class="img-fluid" style="height:450px; object-fit:contain;" alt="@Model.ProductName">
 
             </div>
 
@@ -113,20 +111,17 @@
                 </strong>
 
 
-                <button class="btn btn-outline-secondary btn-sm">
+                <button class="btn btn-outline-secondary btn-sm" onclick="decrease_quantity()">
                     -
                 </button>
 
 
 
-                <input type="text"
-                       value="1"
-                       class="form-control text-center"
-                       style="width:60px;">
+                <input type="text" value="1" id="quantity" class="form-control text-center" style="width:60px;">
 
 
 
-                <button class="btn btn-outline-secondary btn-sm">
+                <button class="btn btn-outline-secondary btn-sm" onclick="increase_quantity()">
                     +
                 </button>
 
@@ -280,7 +275,7 @@
                     <div class="col-lg-3 col-md-6">
 
 
-                        <div class="card h-100 shadow-sm">
+                        <div class="card shadow-sm" style="height:280px; width:280px;">
 
 
                             <div class="card-body">
@@ -289,9 +284,7 @@
 
                                 <div class="text-center d-flex justify-content-center align-items-center" style="height:160px;">
 
-                                    <img src="~/All_Images/Products/@item.Image"
-                                         class="img-fluid"
-                                         style="height:160px; object-fit:contain;">
+                                    <img src="~/All_Images/Products/@item.Image" class="img-fluid" style="height:160px; object-fit:contain;">
 
                                 </div>
 
@@ -317,9 +310,7 @@
 
 
 
-                                <a asp-action="ProductDetails"
-                                   asp-route-id="@item.ProductID"
-                                   class="btn btn-success btn-sm w-100 mt-3">
+                                <a asp-action="ProductDetails" asp-route-id="@item.ProductID" class="btn btn-success btn-sm w-100 mt-2">
 
                                     View Product
 
@@ -354,3 +345,29 @@
 
 
 </div>
+
+<script>
+
+    function increase_quantity() {
+
+        let quantity = document.getElementById("quantity");
+        let value = parseInt(quantity.value);
+        value++;
+
+        quantity.value = value;
+    }
+
+    function decrease_quantity() {
+
+        let quantity = document.getElementById("quantity");
+        let value = parseInt(quantity.value);
+
+        if (value > 0) {
+            value--;
+            quantity.value = value;
+        }
+
+    }
+
+</script>
+```
