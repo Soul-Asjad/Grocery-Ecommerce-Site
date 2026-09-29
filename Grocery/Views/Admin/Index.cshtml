@@ -1,430 +1,233 @@
 ﻿@{
+    Layout = "_AdminLayout";
     ViewData["Title"] = "Admin Dashboard";
-
     var username = Context.Session.GetString("user");
 }
 
-<!-- ADMIN DASHBOARD PAGE START -->
-<main class="my-5">
-    <div class="container">
+<!-- GREETING BANNER -->
+<div class="mb-4">
+    <h2 class="fw-bold text-success mb-0">Hello!</h2>
+    <h5 class="fw-semibold text-dark">@username</h5>
+</div>
 
-        <!-- ADMIN TOP HEADER START -->
-        <section class="mb-5">
-            <div class="rounded-lg bg-green-50 border border-green-100 p-5">
-                <div class="flex flex-wrap justify-between items-center gap-4">
-
+<!-- OVERVIEW SECTION -->
+<div class="mb-5">
+    <h5 class="fw-bold text-dark mb-3">Overview</h5>
+    <div class="row g-3">
+        <!-- Card 1 -->
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 rounded-4 text-white shadow-sm h-100" style="background: linear-gradient(135deg, #1b5e20 0%, #4caf50 100%);">
+                <div class="card-body p-4 d-flex align-items-center gap-3">
+                    <div class="bg-white rounded-circle p-3 text-success d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px;">
+                        <i class="ti ti-currency-dollar fs-3"></i>
+                    </div>
                     <div>
-                        <span class="inline-block p-2 text-sm rounded-lg bg-green-600 text-white font-semibold mb-3">
-                            Grocery Admin Panel
-                        </span>
-
-                        <h1 class="text-2xl lg:text-4xl font-bold text-gray-900 mb-2">
-                            Welcome Back, @username
-                        </h1>
-
-                        <p class="text-gray-600 text-sm lg:text-base">
-                            Manage your grocery store products, categories, orders, customers and payments from one place.
-                        </p>
+                        <small class="text-white-50 fw-semibold d-block">Total Earnings</small>
+                        <h4 class="fw-bold mb-0">$ @ViewBag.TotalEarn</h4>
                     </div>
-
-                    <div class="flex flex-wrap gap-3">
-                        <a asp-controller="Products" asp-action="Create"
-                           class="btn inline-flex items-center gap-x-2 bg-green-600 text-white border-green-600 hover:text-white hover:bg-green-700 hover:border-green-700 focus:outline-none focus:ring-4 focus:ring-green-300">
-                            <i class="ti ti-plus inline-block" style="font-size:16px; line-height:16px;"></i>
-                            Add Product
-                        </a>
-
-                        <a asp-controller="Home" asp-action="Index"
-                           class="btn inline-flex items-center gap-x-2 bg-white text-gray-800 border border-gray-300 hover:bg-gray-100">
-                            <i class="ti ti-home inline-block" style="font-size:16px; line-height:16px;"></i>
-                            View Store
-                        </a>
-                    </div>
-
                 </div>
             </div>
-        </section>
-        <!-- ADMIN TOP HEADER END -->
+        </div>
 
-
-        <!-- ADMIN BODY LAYOUT START -->
-        <section>
-            <div class="flex flex-wrap lg:flex-nowrap gap-5">
-
-                <!-- ADMIN SIDEBAR START -->
-                <aside class="w-full lg:w-1/5">
-                    <div class="rounded-lg border bg-white border-gray-300 overflow-hidden">
-
-                        <!-- SIDEBAR PROFILE START -->
-                        <div class="p-5 border-b bg-gray-50">
-                            <div class="flex items-center gap-3">
-                                <div class="w-12 h-12 rounded-lg bg-green-600 text-white flex items-center justify-center font-bold">
-                                    A
-                                </div>
-
-                                <div>
-                                    <h4 class="font-bold text-gray-900">Admin</h4>
-                                    <p class="text-gray-500 text-sm">Store Manager</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- SIDEBAR PROFILE END -->
-
-
-                        <!-- SIDEBAR MENU START -->
-                        <div class="p-3">
-                            <ul class="list-none flex flex-col gap-1">
-
-                                <li>
-                                    <a asp-controller="Admin" asp-action="Dashboard"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg bg-green-50 text-green-700 font-semibold">
-                                        <i class="ti ti-layout-dashboard inline-block" style="font-size:18px;"></i>
-                                        Dashboard
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Categories" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-category inline-block" style="font-size:18px;"></i>
-                                        Categories
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Products" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-package inline-block" style="font-size:18px;"></i>
-                                        Products
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Orders" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-shopping-bag inline-block" style="font-size:18px;"></i>
-                                        Orders
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Users" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-users inline-block" style="font-size:18px;"></i>
-                                        Customers
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Payments" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-credit-card inline-block" style="font-size:18px;"></i>
-                                        Payments
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a asp-controller="Home" asp-action="Index"
-                                       class="flex items-center gap-3 px-3 py-2 rounded-lg text-gray-700 hover:bg-gray-100">
-                                        <i class="ti ti-store inline-block" style="font-size:18px;"></i>
-                                        Back to Store
-                                    </a>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <!-- SIDEBAR MENU END -->
-
+        <!-- Card 2 -->
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 rounded-4 text-white shadow-sm h-100" style="background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);">
+                <div class="card-body p-4 d-flex align-items-center gap-3">
+                    <div class="bg-white rounded-circle p-3 text-success d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px;">
+                        <i class="ti ti-box fs-3"></i>
                     </div>
-                </aside>
-                <!-- ADMIN SIDEBAR END -->
-
-
-                <!-- ADMIN MAIN CONTENT START -->
-                <div class="w-full lg:w-4/5">
-
-                    <!-- STATS CARDS START -->
-                    <section class="mb-5">
-                        <div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-
-                            <div class="rounded-lg border bg-white border-gray-300 hover:border-green-600 transition">
-                                <div class="p-5">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-gray-500 text-sm mb-1">Total Orders</p>
-                                            <h3 class="text-2xl font-bold text-gray-900">128</h3>
-                                        </div>
-
-                                        <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center">
-                                            <i class="ti ti-shopping-cart inline-block" style="font-size:24px;"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t">
-                                        <span class="text-green-600 text-sm font-semibold">+12 today</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-lg border bg-white border-gray-300 hover:border-green-600 transition">
-                                <div class="p-5">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-gray-500 text-sm mb-1">Products</p>
-                                            <h3 class="text-2xl font-bold text-gray-900">86</h3>
-                                        </div>
-
-                                        <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center">
-                                            <i class="ti ti-package inline-block" style="font-size:24px;"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t">
-                                        <span class="text-gray-500 text-sm">Active grocery items</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-lg border bg-white border-gray-300 hover:border-green-600 transition">
-                                <div class="p-5">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-gray-500 text-sm mb-1">Customers</p>
-                                            <h3 class="text-2xl font-bold text-gray-900">54</h3>
-                                        </div>
-
-                                        <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center">
-                                            <i class="ti ti-users inline-block" style="font-size:24px;"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t">
-                                        <span class="text-gray-500 text-sm">Registered users</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="rounded-lg border bg-white border-gray-300 hover:border-green-600 transition">
-                                <div class="p-5">
-                                    <div class="flex justify-between items-start">
-                                        <div>
-                                            <p class="text-gray-500 text-sm mb-1">Revenue</p>
-                                            <h3 class="text-2xl font-bold text-gray-900">$2,450</h3>
-                                        </div>
-
-                                        <div class="w-12 h-12 rounded-lg bg-green-50 text-green-600 flex items-center justify-center">
-                                            <i class="ti ti-cash inline-block" style="font-size:24px;"></i>
-                                        </div>
-                                    </div>
-
-                                    <div class="mt-4 pt-3 border-t">
-                                        <span class="text-green-600 text-sm font-semibold">This month</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </section>
-                    <!-- STATS CARDS END -->
-
-
-                    <!-- QUICK MANAGEMENT SECTION START -->
-                    <section class="mb-5">
-                        <div class="rounded-lg border bg-white border-gray-300">
-                            <div class="p-5 border-b flex flex-wrap justify-between items-center gap-3">
-                                <div>
-                                    <h2 class="text-lg font-bold text-gray-900">Store Management</h2>
-                                    <p class="text-gray-500 text-sm">Quickly manage important ecommerce sections.</p>
-                                </div>
-                            </div>
-
-                            <div class="p-5">
-                                <div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-
-                                    <a asp-controller="Products" asp-action="Add_product"
-                                       class="rounded-lg border border-gray-300 p-4 hover:border-green-600 hover:bg-green-50 transition">
-                                        <div class="w-11 h-11 rounded-lg bg-green-600 text-white flex items-center justify-center mb-3">
-                                            <i class="ti ti-plus inline-block" style="font-size:22px;"></i>
-                                        </div>
-                                        <h4 class="font-bold text-gray-900 mb-1">Add Product</h4>
-                                        <p class="text-gray-500 text-sm">Create new grocery product.</p>
-                                    </a>
-
-                                    <a asp-controller="Categories" asp-action="Add_category"
-                                       class="rounded-lg border border-gray-300 p-4 hover:border-green-600 hover:bg-green-50 transition">
-                                        <div class="w-11 h-11 rounded-lg bg-green-600 text-white flex items-center justify-center mb-3">
-                                            <i class="ti ti-category-plus inline-block" style="font-size:22px;"></i>
-                                        </div>
-                                        <h4 class="font-bold text-gray-900 mb-1">Add Category</h4>
-                                        <p class="text-gray-500 text-sm">Create grocery category.</p>
-                                    </a>
-
-                                    <a asp-controller="Orders" asp-action="Index"
-                                       class="rounded-lg border border-gray-300 p-4 hover:border-green-600 hover:bg-green-50 transition">
-                                        <div class="w-11 h-11 rounded-lg bg-green-600 text-white flex items-center justify-center mb-3">
-                                            <i class="ti ti-truck-delivery inline-block" style="font-size:22px;"></i>
-                                        </div>
-                                        <h4 class="font-bold text-gray-900 mb-1">Orders</h4>
-                                        <p class="text-gray-500 text-sm">Check and update orders.</p>
-                                    </a>
-
-                                    <a asp-controller="Users" asp-action="Index"
-                                       class="rounded-lg border border-gray-300 p-4 hover:border-green-600 hover:bg-green-50 transition">
-                                        <div class="w-11 h-11 rounded-lg bg-green-600 text-white flex items-center justify-center mb-3">
-                                            <i class="ti ti-user-check inline-block" style="font-size:22px;"></i>
-                                        </div>
-                                        <h4 class="font-bold text-gray-900 mb-1">Customers</h4>
-                                        <p class="text-gray-500 text-sm">View customer accounts.</p>
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- QUICK MANAGEMENT SECTION END -->
-                    <!-- ORDERS AND STOCK SECTION START -->
-                    <section>
-                        <div class="grid gap-5 grid-cols-1 xl:grid-cols-3">
-
-                            <!-- RECENT ORDERS START -->
-                            <div class="xl:col-span-2">
-                                <div class="rounded-lg border bg-white border-gray-300 overflow-hidden">
-
-                                    <div class="p-5 border-b flex flex-wrap justify-between items-center gap-3">
-                                        <div>
-                                            <h2 class="text-lg font-bold text-gray-900">Recent Orders</h2>
-                                            <p class="text-gray-500 text-sm">Latest customer orders.</p>
-                                        </div>
-
-                                        <a asp-controller="Orders" asp-action="Index"
-                                           class="text-green-600 text-sm font-semibold">
-                                            View All
-                                        </a>
-                                    </div>
-
-                                    <div class="overflow-x-auto">
-                                        <table class="w-full text-left">
-                                            <thead class="bg-gray-50 border-b">
-                                                <tr>
-                                                    <th class="p-4 text-sm font-semibold text-gray-700">Order</th>
-                                                    <th class="p-4 text-sm font-semibold text-gray-700">Customer</th>
-                                                    <th class="p-4 text-sm font-semibold text-gray-700">Amount</th>
-                                                    <th class="p-4 text-sm font-semibold text-gray-700">Status</th>
-                                                    <th class="p-4 text-sm font-semibold text-gray-700">Action</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 text-sm font-bold text-gray-900">#ORD-1001</td>
-                                                    <td class="p-4 text-sm text-gray-600">Ali Khan</td>
-                                                    <td class="p-4 text-sm text-gray-900">$45.00</td>
-                                                    <td class="p-4">
-                                                        <span class="inline-block p-1 text-center font-semibold text-sm rounded bg-yellow-100 text-yellow-700">Pending</span>
-                                                    </td>
-                                                    <td class="p-4">
-                                                        <a href="#" class="text-green-600 font-semibold text-sm">View</a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="border-b hover:bg-gray-50">
-                                                    <td class="p-4 text-sm font-bold text-gray-900">#ORD-1002</td>
-                                                    <td class="p-4 text-sm text-gray-600">Sara Ahmed</td>
-                                                    <td class="p-4 text-sm text-gray-900">$72.00</td>
-                                                    <td class="p-4">
-                                                        <span class="inline-block p-1 text-center font-semibold text-sm rounded bg-green-100 text-green-700">Delivered</span>
-                                                    </td>
-                                                    <td class="p-4">
-                                                        <a href="#" class="text-green-600 font-semibold text-sm">View</a>
-                                                    </td>
-                                                </tr>
-
-                                                <tr class="hover:bg-gray-50">
-                                                    <td class="p-4 text-sm font-bold text-gray-900">#ORD-1003</td>
-                                                    <td class="p-4 text-sm text-gray-600">Ahmed Raza</td>
-                                                    <td class="p-4 text-sm text-gray-900">$31.00</td>
-                                                    <td class="p-4">
-                                                        <span class="inline-block p-1 text-center font-semibold text-sm rounded bg-blue-100 text-blue-700">Processing</span>
-                                                    </td>
-                                                    <td class="p-4">
-                                                        <a href="#" class="text-green-600 font-semibold text-sm">View</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- RECENT ORDERS END -->
-                            <!-- LOW STOCK PRODUCTS START -->
-                            <div>
-                                <div class="rounded-lg border bg-white border-gray-300">
-
-                                    <div class="p-5 border-b">
-                                        <h2 class="text-lg font-bold text-gray-900">Low Stock</h2>
-                                        <p class="text-gray-500 text-sm">Products that need restock.</p>
-                                    </div>
-
-                                    <div class="p-5">
-                                        <div class="flex flex-col gap-4">
-
-                                            <div class="flex items-center gap-3">
-                                                <img src="@Url.Content("~/images/products/product-img-1.jpg")"
-                                                     alt="Product"
-                                                     class="w-12 h-12 rounded-lg border border-gray-300" />
-
-                                                <div class="flex-1">
-                                                    <h4 class="text-sm font-bold text-gray-900">Haldiram's Sev Bhujia</h4>
-                                                    <p class="text-red-600 text-sm">Only 4 left</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center gap-3">
-                                                <img src="@Url.Content("~/images/products/product-img-4.jpg")"
-                                                     alt="Product"
-                                                     class="w-12 h-12 rounded-lg border border-gray-300" />
-
-                                                <div class="flex-1">
-                                                    <h4 class="text-sm font-bold text-gray-900">Onion Potato</h4>
-                                                    <p class="text-red-600 text-sm">Only 2 left</p>
-                                                </div>
-                                            </div>
-
-                                            <div class="flex items-center gap-3">
-                                                <img src="@Url.Content("~/images/products/product-img-10.jpg")"
-                                                     alt="Product"
-                                                     class="w-12 h-12 rounded-lg border border-gray-300" />
-
-                                                <div class="flex-1">
-                                                    <h4 class="text-sm font-bold text-gray-900">Amul Butter</h4>
-                                                    <p class="text-yellow-600 text-sm">Only 8 left</p>
-                                                </div>
-                                            </div>
-
-                                        </div>
-
-                                        <a asp-controller="Products" asp-action="Index"
-                                           class="btn mt-5 w-full inline-flex justify-center items-center gap-x-2 bg-gray-800 text-white border-gray-800 hover:text-white hover:bg-gray-900 hover:border-gray-900">
-                                            Manage Stock
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!-- LOW STOCK PRODUCTS END -->
-
-                        </div>
-                    </section>
-                    <!-- ORDERS AND STOCK SECTION END -->
-
+                    <div>
+                        <small class="text-white-50 fw-semibold d-block">Total Orders</small>
+                        <h4 class="fw-bold mb-0">@ViewBag.Orders</h4>
+                    </div>
                 </div>
-                <!-- ADMIN MAIN CONTENT END -->
-
             </div>
-        </section>
-        <!-- ADMIN BODY LAYOUT END -->
+        </div>
 
+        <!-- Card 3 -->
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 rounded-4 text-white shadow-sm h-100" style="background: linear-gradient(135deg, #33691e 0%, #8bc34a 100%);">
+                <div class="card-body p-4 d-flex align-items-center gap-3">
+                    <div class="bg-white rounded-circle p-3 text-success d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px;">
+                        <i class="ti ti-users fs-3"></i>
+                    </div>
+                    <div>
+                        <small class="text-white-50 fw-semibold d-block">Total Customers</small>
+                        <h4 class="fw-bold mb-0">@ViewBag.users</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-12 col-sm-6 col-xl-3">
+            <div class="card border-0 rounded-4 text-white shadow-sm h-100" style="background: linear-gradient(135deg, #558b2f 0%, #9ccc65 100%);">
+                <div class="card-body p-4 d-flex align-items-center gap-3">
+                    <div class="bg-white rounded-circle p-3 text-success d-flex align-items-center justify-content-center shadow-xs" style="width: 52px; height: 52px;">
+                        <i class="ti ti-file-text fs-3"></i>
+                    </div>
+                    <div>
+                        <small class="text-white-50 fw-semibold d-block">Total Products</small>
+                        <h4 class="fw-bold mb-0">@ViewBag.products</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</main>
-<!-- ADMIN DASHBOARD PAGE END -->
+</div>
+
+<!-- ORDER STATISTICS SECTION -->
+<div class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0">Order Statistics</h5>
+        <select class="form-select form-select-sm w-auto rounded-pill border-0 shadow-sm px-3 py-2 fw-semibold">
+            <option>Select Period</option>
+            <option>Today</option>
+            <option>This Week</option>
+            <option>This Month</option>
+        </select>
+    </div>
+
+    <div class="row g-3">
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-warning-subtle text-warning p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-package fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Total Orders</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-warning-subtle text-warning p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-clock fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Pending</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-success-subtle text-success p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-circle-check fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Confirmed</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-info-subtle text-info p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-truck-delivery fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">In Progress</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-primary-subtle text-primary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-check fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Delivered</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-danger-subtle text-danger p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-x fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Canceled</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-secondary-subtle text-secondary p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-arrow-back-up fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Returned</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-3">
+            <div class="card border-0 shadow-sm rounded-4 p-3 bg-white h-100">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="bg-danger-subtle text-danger p-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px;">
+                        <i class="ti ti-ban fs-4"></i>
+                    </div>
+                    <div>
+                        <small class="text-muted fw-semibold d-block">Rejected</small>
+                        <h5 class="fw-bold mb-0 text-dark">0</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- RECENT ORDERS TABLE SECTION -->
+<div class="card border-0 shadow-sm rounded-4 bg-white p-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-dark mb-0">Recent Orders</h5>
+        <a asp-controller="Orders" asp-action="Index" class="btn btn-sm btn-outline-success rounded-pill px-3">View All</a>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-3 py-3">Order ID</th>
+                    <th class="py-3">Customer</th>
+                    <th class="py-3">Amount</th>
+                    <th class="py-3">Status</th>
+                    <th class="py-3 text-end pe-3">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="5" class="text-center text-muted py-5">
+                        <i class="ti ti-inbox fs-1 d-block mb-2 text-secondary"></i>
+                        <span>No recent orders found.</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,81 +1,161 @@
 @model Grocery.Models.Products
 
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Edit Product";
 }
 
-<h1>Edit</h1>
-
-<h4>Products</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="ProductID" />
-            <div class="form-group">
-                <label asp-for="CategoryID" class="control-label"></label>
-                <select asp-for="CategoryID" asp-items="ViewBag.catlist" class="no-icon">
-                    <option value=""> -- Select -- </option>
-                </select>
-                <span asp-validation-for="CategoryID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductName" class="control-label"></label>
-                <input asp-for="ProductName" class="form-control" />
-                <span asp-validation-for="ProductName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="DiscountPrice" class="control-label"></label>
-                <input asp-for="DiscountPrice" class="form-control" />
-                <span asp-validation-for="DiscountPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="StockQuantity" class="control-label"></label>
-                <input asp-for="StockQuantity" class="form-control" />
-                <span asp-validation-for="StockQuantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Unit" class="control-label"></label>
-                <input asp-for="Unit" class="form-control" />
-                <span asp-validation-for="Unit" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" type="file" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Isfeatured" class="control-label"></label>
-                <input asp-for="Isfeatured" class="form-check-input" />
-                <span asp-validation-for="Isfeatured" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Isactive" class="control-label"></label>
-                <input asp-for="Isactive" class="form-check-input" />
-                <span asp-validation-for="Isactive" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Edit Product</h2>
+        <small class="text-muted">Update information for "@Model.ProductName"</small>
     </div>
+    <a asp-action="View_Products" asp-controller="Products" class="btn btn-outline-secondary rounded-3 text-nowrap">
+        Back to Products
+    </a>
 </div>
 
-<div>
-    <a asp-action="View_Products" asp-controller="Products" >Back to List</a>
-</div>
+<!-- FORM START -->
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3 mb-4" role="alert"></div>
+    <input type="hidden" asp-for="ProductID" />
+
+    <div class="row g-4">
+
+        <!-- LEFT COLUMN: MAIN DETAILS -->
+        <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Basic Information</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-3">
+                        <label asp-for="ProductName" class="form-label fw-semibold">Product Name <span class="text-danger">*</span></label>
+                        <input asp-for="ProductName" class="form-control bg-light py-2" placeholder="e.g. Fresh Apples" />
+                        <span asp-validation-for="ProductName" class="text-danger fs-7"></span>
+                    </div>
+
+                    <div class="mb-0">
+                        <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                        <textarea asp-for="Description" class="form-control bg-light py-2" rows="4" placeholder="Enter product details..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger fs-7"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Pricing & Inventory</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Price" class="form-label fw-semibold">Regular Price ($) <span class="text-danger">*</span></label>
+                            <input asp-for="Price" class="form-control bg-light py-2" placeholder="0.00" />
+                            <span asp-validation-for="Price" class="text-danger fs-7"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="DiscountPrice" class="form-label fw-semibold">Discount Price ($)</label>
+                            <input asp-for="DiscountPrice" class="form-control bg-light py-2" placeholder="0.00" />
+                            <span asp-validation-for="DiscountPrice" class="text-danger fs-7"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="StockQuantity" class="form-label fw-semibold">Stock Quantity <span class="text-danger">*</span></label>
+                            <input asp-for="StockQuantity" class="form-control bg-light py-2" placeholder="0" />
+                            <span asp-validation-for="StockQuantity" class="text-danger fs-7"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="Unit" class="form-label fw-semibold">Measurement Unit <span class="text-danger">*</span></label>
+                            <input asp-for="Unit" class="form-control bg-light py-2" placeholder="e.g. 1 kg, Pack, Piece" />
+                            <span asp-validation-for="Unit" class="text-danger fs-7"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: CATEGORY, IMAGE, STATUS & SUBMIT -->
+        <div class="col-12 col-lg-4">
+
+            <!-- CATEGORY -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Category</h5>
+                </div>
+                <div class="card-body p-4">
+                    <label asp-for="CategoryID" class="form-label fw-semibold">Select Category <span class="text-danger">*</span></label>
+                    <select asp-for="CategoryID" asp-items="ViewBag.catlist" class="form-select bg-light py-2">
+                        <option value=""> -- Select Category -- </option>
+                    </select>
+                    <span asp-validation-for="CategoryID" class="text-danger fs-7"></span>
+                </div>
+            </div>
+
+            <!-- STATUS & TOGGLES -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Product Status</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="form-check form-switch mb-3">
+                        <input asp-for="Isactive" class="form-check-input" type="checkbox" role="switch" id="activeSwitch" />
+                        <label class="form-check-label fw-semibold text-dark ms-2" for="activeSwitch">Active Status</label>
+                        <span asp-validation-for="Isactive" class="text-danger fs-7 d-block"></span>
+                    </div>
+
+                    <div class="form-check form-switch">
+                        <input asp-for="Isfeatured" class="form-check-input" type="checkbox" role="switch" id="featuredSwitch" />
+                        <label class="form-check-label fw-semibold text-dark ms-2" for="featuredSwitch">Featured Item</label>
+                        <span asp-validation-for="Isfeatured" class="text-danger fs-7 d-block"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT IMAGE & PREVIEW -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Product Image</h5>
+                </div>
+                <div class="card-body p-4">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <div class="mb-3 text-center">
+                            <label class="form-label fw-semibold d-block text-start">Current Image:</label>
+                            <img src="~/All_Images/Products/@Model.Image"
+                                 alt="@Model.ProductName"
+                                 class="rounded-3 border p-1"
+                                 style="max-height: 120px; width: auto; object-fit: contain;" />
+                        </div>
+                    }
+
+                    <label asp-for="Image" class="form-label fw-semibold">Replace Image</label>
+                    <input asp-for="Image" type="file" class="form-control bg-light py-2" accept="image/*" />
+                    <span asp-validation-for="Image" class="text-danger fs-7"></span>
+                </div>
+            </div>
+
+            <!-- SAVE BUTTONS -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-body p-4">
+                    <button type="submit" class="btn btn-success btn-lg w-100 fw-bold rounded-3 py-3 mb-2">
+                        Update Product
+                    </button>
+                    <a asp-action="View_Products" asp-controller="Products" class="btn btn-light w-100 fw-semibold text-secondary py-2 rounded-3">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

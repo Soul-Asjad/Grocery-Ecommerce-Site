@@ -1,4 +1,11 @@
-﻿
+﻿@inject IMyService services;
+@{
+    var category = services.Categories();
+    var user_id = Context.Session.GetInt32("user_id") ?? 0;
+    var role = Context.Session.GetString("user_role");
+    var cartcount = services.CountCart(user_id);
+}
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -78,17 +85,36 @@
                             </a>
                         </div>
                         <div class="lg:w-2/5 hidden lg:block">
-                            <form action="#">
+                            <form asp-controller="Home" asp-action="Product" method="get">
                                 <div class="relative">
-                                    <label class="invisible hidden" for="searchProducts">Search</label>
-                                    <input class="border border-gray-300 text-gray-900 rounded-lg focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)] focus:ring-green-600 focus:ring-0 focus:border-green-600 block p-2 px-3 disabled:opacity-50 disabled:pointer-events-none w-full text-base"
-                                           id="searchProducts" placeholder="Search for products" type="search" />
-                                    <button class="absolute right-0 top-0 p-3" type="button">
+
+                                    <label class="invisible hidden" for="searchProducts">
+                                        Search
+                                    </label>
+
+                                    <input class="border border-gray-300 text-gray-900 rounded-lg
+                                    focus:shadow-[0_0_0_.25rem_rgba(10,173,10,.25)]
+                                    focus:ring-green-600 focus:ring-0
+                                    focus:border-green-600 block p-2 px-3
+                                    w-full text-base"
+                                           id="searchProducts"
+                                           name="search"
+                                           value="@ViewBag.Search"
+                                           placeholder="Search for products"
+                                           type="search" />
+
+                                    <button class="absolute right-0 top-0 p-3"
+                                            type="submit">
+
                                         <i class="ti ti-search inline-block"
-                                           style="font-size:16px; line-height:16px;"></i>
+                                           style="font-size:16px; line-height:16px;">
+                                        </i>
+
                                     </button>
+
                                 </div>
                             </form>
+
                         </div>
                         <div class="lg:w-1/5 hidden lg:block">
                             <!-- Button trigger modal -->
@@ -122,18 +148,20 @@
                                            style="font-size:22px; line-height:22px;"></i>
                                     </a>
                                 </div>
-                                <div>
-                                    <button aria-controls="offcanvasRight" class="text-gray-600 relative"
-                                            data-bs-target="#offcanvasRight" data-bs-toggle="offcanvas" role="button"
-                                            type="button">
-                                        <i class="ti ti-shopping-bag inline-block"
+                                <div class="relative">
+                                    <a class="text-gray-600 relative inline-block"
+                                       asp-action="Shopping_Cart"
+                                       asp-controller="Cart">
+
+                                        <i class="ti ti-shopping-bag"
                                            style="font-size:24px; line-height:24px;"></i>
-                                        <span class="absolute top-0 -mt-1 left-full rounded-full h-5 w-5 -ml-3 bg-green-600 text-white text-center font-semibold text-sm"
-                                              id="cartCount">
-                                            0
-                                            <span class="invisible">unread messages</span>
+
+                                        <span id="cartCount"
+                                              class="absolute -top-2 -right-2 bg-green-600 text-white rounded-full h-5 w-5 text-center text-xs font-semibold">
+                                            @cartcount
                                         </span>
-                                    </button>
+
+                                    </a>
                                 </div>
                                 <div class="lg:hidden leading-none">
                                     <!-- Button -->
@@ -189,13 +217,10 @@
                                 <div class="collapse mt-2" id="collapseExample">
                                     <div class="card card-body">
                                         <ul class="list-unstyled">
-                                            <li><a class="dropdown-item" href="#">Dairy, Bread &amp; Eggs</a></li>
-                                            <li><a class="dropdown-item" href="#">Snacks &amp; Munchies</a></li>
-                                            <li><a class="dropdown-item" href="#">Fruits &amp; Vegetables</a></li>
-                                            <li><a class="dropdown-item" href="#">Cold Drinks &amp; Juices</a></li>
-                                            <li><a class="dropdown-item" href="#">Breakfast &amp; Instant Food</a></li>
-                                            <li><a class="dropdown-item" href="#">Bakery &amp; Biscuits</a></li>
-                                            <li><a class="dropdown-item" href="#">Chicken, Meat &amp; Fish</a></li>
+                                            @foreach (var item in category)
+                                                {
+                                                    <li><a class="dropdown-item" asp-route-id="@item.Categoryid" >@item.CategoryName</a></li>
+                                                }
                                         </ul>
                                     </div>
                                 </div>
@@ -211,13 +236,10 @@
                                     All Categories
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Dairy, Bread &amp; Eggs</a></li>
-                                    <li><a class="dropdown-item" href="#">Snacks &amp; Munchies</a></li>
-                                    <li><a class="dropdown-item" href="#">Fruits &amp; Vegetables</a></li>
-                                    <li><a class="dropdown-item" href="#">Cold Drinks &amp; Juices</a></li>
-                                    <li><a class="dropdown-item" href="#">Breakfast &amp; Instant Food</a></li>
-                                    <li><a class="dropdown-item" href="#">Bakery &amp; Biscuits</a></li>
-                                    <li><a class="dropdown-item" href="#">Chicken, Meat &amp; Fish</a></li>
+                                    @foreach (var item in category)
+                                        {
+                                            <li><a class="dropdown-item" asp-route-id="@item.Categoryid">@item.CategoryName</a></li>
+                                        }
                                 </ul>
                             </div>
 
@@ -239,18 +261,23 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contact</a>
                                     </li>
-                                    @if(Context.Session.GetString("user_role") == "admin")
+                                    @if(role == "Admin")
                                         {
                                         <li class="nav-item">
                                             <a class="nav-link" asp-action="Index" asp-controller="Admin" >Dashboard</a>
                                         </li>
                                         }
-                                    else if(Context.Session.GetString("user_role") == "user")
+
+                                    @if (role == "Admin" || role == "User")
                                     {
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-action="Index" asp-controller="Home" >Dashboard</a>
+                                        <li class="nav-item ms-auto">
+                                            <a class="nav-link" asp-action="Logout" asp-controller="User">
+                                                Logout
+                                            </a>
                                         </li>
                                     }
+
+
 
 
                                 </ul>
@@ -426,7 +453,7 @@
                             ©
                             <span id="copyright">
                                 <script>
-                                                                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
+                                    document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()));
                                 </script>
                             </span>
                             FreshCart TailwindCSS eCommerce HTML Template. Powered by

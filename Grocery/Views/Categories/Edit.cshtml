@@ -1,49 +1,108 @@
 @model Grocery.Models.Categories
 
 @{
-    ViewData["Title"] = "Edit";
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Edit Category";
 }
 
-<h1>Edit</h1>
-
-<h4>Categories</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" method="post" enctype="multipart/form-data">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Categoryid" />
-            <div class="form-group">
-                <label asp-for="CategoryName" class="control-label"></label>
-                <input asp-for="CategoryName" class="form-control" />
-                <span asp-validation-for="CategoryName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="image" class="control-label"></label>
-                <input asp-for="image" type="file" class="form-control" />
-                <span asp-validation-for="image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="isactive" class="control-label"></label>
-                <input asp-for="isactive" class="form-check-input" />
-                <span asp-validation-for="isactive" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Edit Category</h2>
+        <small class="text-muted">Update details for "@Model.CategoryName"</small>
     </div>
+    <a asp-action="View_category" class="btn btn-outline-secondary rounded-3 text-nowrap">
+        Back to Categories
+    </a>
 </div>
 
-<div>
-    <a asp-action="View_category">Back to List</a>
-</div>
+<!-- FORM START -->
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3 mb-4" role="alert"></div>
+    <input type="hidden" asp-for="Categoryid" />
+
+    <div class="row g-4">
+
+        <!-- LEFT COLUMN: CATEGORY DETAILS -->
+        <div class="col-12 col-lg-8">
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Basic Information</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-3">
+                        <label asp-for="CategoryName" class="form-label fw-semibold">Category Name <span class="text-danger">*</span></label>
+                        <input asp-for="CategoryName" class="form-control bg-light py-2" placeholder="e.g. Vegetables & Fruits" />
+                        <span asp-validation-for="CategoryName" class="text-danger fs-7"></span>
+                    </div>
+
+                    <div class="mb-0">
+                        <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                        <textarea asp-for="Description" class="form-control bg-light py-2" rows="4" placeholder="Enter category details..."></textarea>
+                        <span asp-validation-for="Description" class="text-danger fs-7"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: IMAGE, STATUS & SUBMIT -->
+        <div class="col-12 col-lg-4">
+
+            <!-- STATUS TOGGLE -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Category Status</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="form-check form-switch mb-0">
+                        <input asp-for="isactive" class="form-check-input" type="checkbox" role="switch" id="categoryActiveSwitch" />
+                        <label class="form-check-label fw-semibold text-dark ms-2" for="categoryActiveSwitch">Active Status</label>
+                        <span asp-validation-for="isactive" class="text-danger fs-7 d-block"></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CATEGORY IMAGE & PREVIEW -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Category Image</h5>
+                </div>
+                <div class="card-body p-4">
+                    @if (!string.IsNullOrEmpty(Model.image))
+                    {
+                        <div class="mb-3 text-center">
+                            <label class="form-label fw-semibold d-block text-start">Current Image:</label>
+                            <img src="~/All_Images/@Model.image"
+                                 alt="@Model.CategoryName"
+                                 class="rounded-3 border p-1"
+                                 style="max-height: 120px; width: auto; object-fit: contain;" />
+                        </div>
+                    }
+
+                    <label asp-for="image" class="form-label fw-semibold">Replace Image</label>
+                    <input asp-for="image" type="file" class="form-control bg-light py-2" accept="image/*" />
+                    <span asp-validation-for="image" class="text-danger fs-7"></span>
+                </div>
+            </div>
+
+            <!-- SAVE BUTTONS -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-body p-4">
+                    <button type="submit" class="btn btn-success btn-lg w-100 fw-bold rounded-3 py-3 mb-2">
+                        Update Category
+                    </button>
+                    <a asp-action="View_category" class="btn btn-light w-100 fw-semibold text-secondary py-2 rounded-3">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

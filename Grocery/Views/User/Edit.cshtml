@@ -1,0 +1,112 @@
+@model Grocery.Models.Users
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Edit";
+}
+
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Edit User Profile</h2>
+        <small class="text-muted">Update user account information for "@Model.FullName"</small>
+    </div>
+    <a asp-action="View_Users" class="btn btn-outline-secondary rounded-3 text-nowrap">
+        Back to Users
+    </a>
+</div>
+
+<!-- FORM START -->
+<form asp-action="Edit" asp-controller="User" method="post">
+    <div asp-validation-summary="ModelOnly" class="alert alert-danger rounded-3 mb-4" role="alert"></div>
+    <input type="hidden" asp-for="Userid" />
+
+    <div class="row g-4">
+
+        <!-- LEFT COLUMN: MAIN ACCOUNT DETAILS -->
+        <div class="col-12 col-lg-8">
+            <!-- PERSONAL INFORMATION -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Personal Details</h5>
+                </div>
+                <div class="card-body p-4">
+                    <div class="mb-3">
+                        <label asp-for="FullName" class="form-label fw-semibold">Full Name <span class="text-danger">*</span></label>
+                        <input asp-for="FullName" class="form-control bg-light py-2" placeholder="e.g. John Doe" />
+                        <span asp-validation-for="FullName" class="text-danger fs-7"></span>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-md-6">
+                            <label asp-for="email" class="form-label fw-semibold">Email Address <span class="text-danger">*</span></label>
+                            <input asp-for="email" type="email" class="form-control bg-light py-2" placeholder="name@example.com" />
+                            <span asp-validation-for="email" class="text-danger fs-7"></span>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <label asp-for="phone" class="form-label fw-semibold">Phone Number</label>
+                            <input asp-for="phone" class="form-control bg-light py-2" placeholder="e.g. +1 234 567 8900" />
+                            <span asp-validation-for="phone" class="text-danger fs-7"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: ROLE, STATUS & ACTIONS -->
+        <div class="col-12 col-lg-4">
+
+            <!-- ASSIGN ROLE -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">User Role</h5>
+                </div>
+                <div class="card-body p-4">
+                    <label asp-for="role" class="form-label fw-semibold">Select Role <span class="text-danger">*</span></label>
+                    <select asp-for="role" class="form-select bg-light py-2">
+                        <option value=""> -- Select Role -- </option>
+                        <option value="Admin">admin</option>
+                        <option value="User">User</option>
+                        <option value="Staff">Staff</option>
+                    </select>
+                    <span asp-validation-for="role" class="text-danger fs-7"></span>
+                </div>
+            </div>
+
+            <!-- ACCOUNT STATUS TOGGLE -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white mb-4">
+                <div class="card-header bg-white border-bottom py-3 px-4">
+                    <h5 class="fw-bold text-dark mb-0">Account Status</h5>
+                </div>
+                <div class="card-body p-4">
+                    <label asp-for="isactive" class="form-label fw-semibold">Select Status</label>
+                    <select asp-for="isactive" class="form-select bg-light py-2">
+                        <option value="True">Active</option>
+                        <option value="False">Inactive</option>
+                    </select>
+                    <span asp-validation-for="isactive" class="text-danger fs-7 d-block mt-1"></span>
+                </div>
+            </div>
+
+            <!-- SAVE BUTTONS -->
+            <div class="card border-0 shadow-sm rounded-4 bg-white">
+                <div class="card-body p-4">
+                    <button type="submit" class="btn btn-success btn-lg w-100 fw-bold rounded-3 py-3 mb-2">
+                        Update User
+                    </button>
+                    <a asp-action="View_Users" class="btn btn-light w-100 fw-semibold text-secondary py-2 rounded-3">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

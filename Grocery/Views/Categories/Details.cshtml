@@ -1,52 +1,111 @@
 @model Grocery.Models.Categories
 
 @{
-    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Category Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Categories</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryName)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.image)
-        </dt>
-        <dd class = "col-sm-10">
-    <img src="~/All_Images/@Html.DisplayFor(model => model.image)" style="height:60px;  width:80px;"><img />
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.isactive)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.isactive)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.createdat)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.createdat)
-        </dd>
-    </dl>
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Category Details</h2>
+        <small class="text-muted">Viewing details for "@Model.CategoryName"</small>
+    </div>
+    <div class="d-flex gap-2 text-nowrap">
+        <a asp-action="Edit" asp-route-id="@Model?.Categoryid" class="btn btn-primary fw-bold rounded-3 px-4">
+            Edit Category
+        </a>
+        <a asp-action="View_Category" class="btn btn-outline-secondary rounded-3 px-4">
+            Back to List
+        </a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Categoryid">Edit</a> |
-    <a asp-action="View_Category">Back to List</a>
+
+<!-- DETAILS CONTAINER -->
+<div class="row g-4">
+
+    <!-- LEFT COLUMN: CATEGORY IMAGE & STATUS -->
+    <div class="col-12 col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 text-center mb-4">
+            <div class="bg-light rounded-4 p-3 mb-3 border d-flex align-items-center justify-content-center" style="min-height: 200px;">
+                <img src="~/All_Images/@Model.image"
+                     alt="@Model.CategoryName"
+                     class="img-fluid rounded-3"
+                     style="max-height: 180px; object-fit: contain;"
+                     onerror="this.src='https://placehold.co/200x200?text=No+Image';" />
+            </div>
+
+            <h5 class="fw-bold text-dark mb-2">@Model.CategoryName</h5>
+
+            <div class="d-flex justify-content-center mb-1">
+                @if (Model.isactive == true)
+                {
+                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">
+                        Active Status
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3 py-1">
+                        Inactive
+                    </span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: CATEGORY OVERVIEW -->
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 bg-white">
+            <div class="card-header bg-white border-bottom py-3 px-4">
+                <h5 class="fw-bold text-dark mb-0">Category Overview</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-3">
+
+                    <!-- CATEGORY NAME -->
+                    <div class="col-12">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Category Name</label>
+                        <p class="fw-bold text-dark fs-5 mb-0">@Model.CategoryName</p>
+                    </div>
+
+                    <div class="col-12"><hr class="my-2 text-light-subtle"></div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="col-12">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Description</label>
+                        <p class="text-secondary mb-0">
+                            @(string.IsNullOrWhiteSpace(Model.Description) ? "No description available for this category." : Model.Description)
+                        </p>
+                    </div>
+
+                    <div class="col-12"><hr class="my-2 text-light-subtle"></div>
+
+                    <!-- CREATED DATE -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Created Date</label>
+                        <span class="fw-semibold text-dark">
+                            @(Model.createdat.ToString("MMMM dd, yyyy") ?? "—")
+                        </span>
+                    </div>
+
+                    <!-- STATUS -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Current State</label>
+                        <span class="fw-semibold text-dark">
+                            @(Model.isactive == true ? "Visible / Active" : "Hidden / Inactive")
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER ACTIONS -->
+            <div class="card-footer bg-light border-top p-3 text-end rounded-bottom-4">
+                <a asp-action="Edit" asp-route-id="@Model?.Categoryid" class="btn btn-primary fw-bold px-4 me-2">Edit Category</a>
+                <a asp-action="View_Category" class="btn btn-outline-secondary px-4">Back to Categories</a>
+            </div>
+        </div>
+    </div>
+
 </div>

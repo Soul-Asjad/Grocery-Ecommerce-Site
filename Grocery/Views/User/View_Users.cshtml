@@ -1,0 +1,121 @@
+@model IEnumerable<Grocery.Models.Users>
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Users List";
+}
+
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Users Directory</h2>
+        <small class="text-muted">Manage system administrators, staff, and registered customers.</small>
+    </div>
+    <a asp-action="Create" class="btn btn-success btn-lg fw-bold rounded-3 px-4 text-nowrap">
+        + Create New User
+    </a>
+</div>
+
+<!-- USERS TABLE CARD -->
+<div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light text-uppercase fs-7 fw-bold text-muted">
+                <tr>
+                    <th class="ps-4 py-3 text-nowrap">User Name</th>
+                    <th class="py-3 text-nowrap">Email Address</th>
+                    <th class="py-3 text-nowrap">Phone Number</th>
+                    <th class="py-3 text-nowrap">Role</th>
+                    <th class="py-3 text-center text-nowrap">Status</th>
+                    <th class="py-3 text-nowrap">Created Date</th>
+                    <th class="py-3 text-end pe-4 text-nowrap">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="7" class="text-center text-muted py-5">
+                            <h6 class="fw-semibold mb-1">No Users Found</h6>
+                            <small>Click "+ Create New User" to register a user account.</small>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <!-- USER AVATAR & FULL NAME -->
+                            <td class="ps-4 py-3 text-nowrap">
+                                <div class="d-flex align-items-center gap-3">
+                                    <div class="rounded-circle bg-success-subtle text-success fw-bold d-flex align-items-center justify-content-center flex-shrink-0"
+                                         style="width: 42px; height: 42px; font-size: 1.1rem;">
+                                        @(string.IsNullOrWhiteSpace(item.FullName) ? "U" : item.FullName.Substring(0, 1).ToUpper())
+                                    </div>
+                                    <h6 class="fw-bold text-dark mb-0 text-nowrap">@item.FullName</h6>
+                                </div>
+                            </td>
+
+                            <!-- EMAIL ADDRESS -->
+                            <td class="py-3 text-secondary fw-medium text-nowrap">
+                                @(string.IsNullOrWhiteSpace(item.email) ? "—" : item.email)
+                            </td>
+
+                            <!-- PHONE NUMBER -->
+                            <td class="py-3 text-muted text-nowrap fs-7">
+                                @(string.IsNullOrWhiteSpace(item.phone) ? "—" : item.phone)
+                            </td>
+
+                            <!-- ROLE -->
+                            <td class="py-3 text-nowrap">
+                                @if (!string.IsNullOrEmpty(item.role) && item.role.ToLower().Contains("admin"))
+                                {
+                                    <span class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-1 text-capitalize">
+                                        @item.role
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-light text-dark border px-3 py-1 text-capitalize">
+                                        @(string.IsNullOrWhiteSpace(item.role) ? "User" : item.role)
+                                    </span>
+                                }
+                            </td>
+
+                            <!-- STATUS -->
+                            <td class="py-3 text-center text-nowrap">
+                                @if (item.isactive == "True")
+                                {
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">
+                                        Active
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3 py-1">
+                                        Inactive
+                                    </span>
+                                }
+                            </td>
+
+                            <!-- CREATED DATE -->
+                            <td class="py-3 text-muted fs-7 text-nowrap">
+                                @(item.createdate.ToString("MMM dd, yyyy") ?? "—")
+                            </td>
+
+                            <!-- ACTIONS IN ONE LINE -->
+                            <td class="py-3 text-end pe-4 text-nowrap">
+                                <div class="d-inline-flex gap-1">
+                                    <a asp-action="Edit" asp-route-id="@item.Userid" class="btn btn-sm btn-light border text-primary px-2">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.Userid" class="btn btn-sm btn-light border text-info px-2">View</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Userid" class="btn btn-sm btn-light border text-danger px-2">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

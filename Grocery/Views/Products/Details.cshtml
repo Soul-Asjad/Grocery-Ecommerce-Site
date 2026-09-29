@@ -1,101 +1,153 @@
 @model Grocery.Models.Products
 
 @{
-    ViewData["Title"] = "Details";
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Product Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Products</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryID)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryID)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiscountPrice)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiscountPrice)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.StockQuantity)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StockQuantity)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Unit)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Unit)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            <img src="~/All_Images/Products/@Html.DisplayFor(model => model.Image)" style="height:70px; width:100px;" />
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Isfeatured)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Isfeatured)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Isactive)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Isactive)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Createdat)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Createdat)
-        </dd>
-    </dl>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.categories)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.categories)
-        </dd>
-    </dl>
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Product Details</h2>
+        <small class="text-muted">Viewing details for "@Model.ProductName"</small>
+    </div>
+    <div class="d-flex gap-2 text-nowrap">
+        <a asp-action="Edit" asp-route-id="@Model?.ProductID" class="btn btn-primary fw-bold rounded-3 px-4">
+            Edit Product
+        </a>
+        <a asp-action="View_Products" class="btn btn-outline-secondary rounded-3 px-4">
+            Back to List
+        </a>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ProductID">Edit</a> |
-    <a asp-action="View_Products">Back to List</a>
+
+<!-- DETAILS CONTAINER -->
+<div class="row g-4">
+
+    <!-- LEFT COLUMN: IMAGE & QUICK STATS -->
+    <div class="col-12 col-lg-4">
+        <div class="card border-0 shadow-sm rounded-4 bg-white p-4 text-center mb-4">
+            <div class="bg-light rounded-4 p-3 mb-3 border d-flex align-items-center justify-content-center" style="min-height: 220px;">
+                <img src="~/All_Images/Products/@Model.Image"
+                     alt="@Model.ProductName"
+                     class="img-fluid rounded-3"
+                     style="max-height: 200px; object-fit: contain;"
+                     onerror="this.src='https://placehold.co/250x250?text=No+Image';" />
+            </div>
+
+            <h5 class="fw-bold text-dark mb-1">@Model.ProductName</h5>
+            <span class="badge bg-light text-dark border px-3 py-1 w-auto mx-auto mb-3">
+                Category: @(Model.categories?.CategoryName ?? Model.CategoryID.ToString())
+            </span>
+
+            <div class="d-flex justify-content-center gap-2 mb-2">
+                @if (Model.Isactive == true)
+                {
+                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">
+                        Active Status
+                    </span>
+                }
+                else
+                {
+                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3 py-1">
+                        Inactive
+                    </span>
+                }
+
+                @if (Model.Isfeatured == true)
+                {
+                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill px-3 py-1">
+                        ★ Featured Item
+                    </span>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT COLUMN: FULL SPECIFICATIONS -->
+    <div class="col-12 col-lg-8">
+        <div class="card border-0 shadow-sm rounded-4 bg-white">
+            <div class="card-header bg-white border-bottom py-3 px-4">
+                <h5 class="fw-bold text-dark mb-0">Specifications & Overview</h5>
+            </div>
+            <div class="card-body p-4">
+                <div class="row g-3">
+
+                    <!-- PRODUCT NAME -->
+                    <div class="col-12">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Product Name</label>
+                        <p class="fw-bold text-dark fs-5 mb-0">@Model.ProductName</p>
+                    </div>
+
+                    <div class="col-12"><hr class="my-2 text-light-subtle"></div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="col-12">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Description</label>
+                        <p class="text-secondary mb-0">
+                            @(string.IsNullOrWhiteSpace(Model.Description) ? "No description provided." : Model.Description)
+                        </p>
+                    </div>
+
+                    <div class="col-12"><hr class="my-2 text-light-subtle"></div>
+
+                    <!-- PRICE & DISCOUNT -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Price</label>
+                        <div>
+                            @if (Model.DiscountPrice != null && Model.DiscountPrice > 0)
+                            {
+                                <span class="fw-bold text-success fs-4">$@Model.DiscountPrice</span>
+                                <span class="text-muted text-decoration-line-through ms-2">$@Model.Price</span>
+                            }
+                            else
+                            {
+                                <span class="fw-bold text-dark fs-4">$@Model.Price</span>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- STOCK & UNIT -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Inventory Stock</label>
+                        <div>
+                            <span class="fw-bold text-dark fs-5">@Model.StockQuantity</span>
+                            <span class="text-muted fw-medium me-2">@Model.Unit</span>
+
+                            @if (Model.StockQuantity <= 5)
+                            {
+                                <span class="badge bg-danger-subtle text-danger border border-danger-subtle ms-2">Low Stock</span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="col-12"><hr class="my-2 text-light-subtle"></div>
+
+                    <!-- CATEGORY -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Category</label>
+                        <span class="fw-semibold text-dark">
+                            @(Model.categories?.CategoryName ?? Model.CategoryID.ToString())
+                        </span>
+                    </div>
+
+                    <!-- CREATED AT -->
+                    <div class="col-12 col-md-6">
+                        <label class="text-uppercase fs-7 fw-bold text-muted d-block mb-1">Created Date</label>
+                        <span class="fw-semibold text-dark">
+                            @(Model.Createdat.ToString("MMMM dd, yyyy") ?? "—")
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- FOOTER ACTIONS -->
+            <div class="card-footer bg-light border-top p-3 text-end rounded-bottom-4">
+                <a asp-action="Edit" asp-route-id="@Model?.ProductID" class="btn btn-primary fw-bold px-4 me-2">Edit Details</a>
+                <a asp-action="View_Products" class="btn btn-outline-secondary px-4">Back to Inventory</a>
+            </div>
+        </div>
+    </div>
+
 </div>

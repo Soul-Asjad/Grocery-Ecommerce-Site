@@ -78,8 +78,64 @@ namespace Grocery.Controllers
             HttpContext.Session.Remove("user");
             HttpContext.Session.Remove("user_id");
 
+            HttpContext.Session.Remove("user_role");
+
             return RedirectToAction("Index", "Home");
         }
+
+
+        //---------------------------------------------------------------------------------------------------------------     Admin Things 
+
+        public IActionResult View_Users()
+        {
+            var user = this.context.User.ToList();
+            return View(user);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var user = this.context.User.FirstOrDefault(x => x.Userid == id);
+
+            this.context.User.Remove(user);
+            this.context.SaveChanges();
+
+            return RedirectToAction("View_Users" , "User");
+        }
+
+        public IActionResult Details(int id)
+        {
+            var user = this.context.User.FirstOrDefault(x => x.Userid == id);
+
+            return View(user);
+        }
+
+        public IActionResult Edit(int id)
+        {
+            var user = this.context.User.FirstOrDefault(x => x.Userid == id);
+            return View(user);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Users data)
+        {
+            var user = this.context.User.FirstOrDefault(x => x.Userid == data.Userid);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            user.FullName = data.FullName;
+            user.phone = data.phone;
+            user.isactive = data.isactive;
+            user.email = data.email;
+            user.role = data.role;
+
+            this.context.SaveChanges();
+
+            return RedirectToAction("View_Users", "User");
+        }
+
 
     }
 }

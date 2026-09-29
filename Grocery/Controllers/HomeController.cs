@@ -14,6 +14,11 @@ namespace Grocery.Controllers
             this.context = context;
         }
 
+        public IActionResult Pro()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             ViewBag.category = this.context.Categories.ToList();
@@ -48,7 +53,7 @@ namespace Grocery.Controllers
         {
             int page_size = 10;
 
-            ViewBag.products = this.context.Products.Include(x => x.categories).Skip((page-1) * page_size).Take(page_size).ToList();
+            ViewBag.products = this.context.Products.Include(x => x.categories).Skip((page - 1) * page_size).Take(page_size).ToList();
 
             ViewBag.CurrentPage = page;
 
@@ -59,7 +64,46 @@ namespace Grocery.Controllers
         }
 
 
-        
+        //public IActionResult Product(string? search, int page = 1)
+        //{
+        //    int page_size = 10;
+
+        //    var products = this.context.Products
+        //        .Include(x => x.categories)
+        //        .AsQueryable();
+
+        //    // Search
+        //    if (!string.IsNullOrWhiteSpace(search))
+        //    {
+        //        search = search.Trim();
+
+        //        products = products.Where(x =>
+        //            x.ProductName.Contains(search));
+        //    }
+
+        //    // Total products AFTER search
+        //    int total_product = products.Count();
+
+        //    // Total pages
+        //    ViewBag.TotalPages =
+        //        (int)Math.Ceiling((double)total_product / page_size);
+
+        //    ViewBag.CurrentPage = page;
+
+        //    // Products for current page
+        //    ViewBag.products = products
+        //        .Skip((page - 1) * page_size)
+        //        .Take(page_size)
+        //        .ToList();
+
+        //    // Keep search value for the view
+        //    ViewBag.Search = search;
+
+        //    return View();
+        //}
+
+
+
 
     }
 }

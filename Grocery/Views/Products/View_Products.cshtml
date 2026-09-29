@@ -1,101 +1,157 @@
 @model IEnumerable<Grocery.Models.Products>
 
 @{
-    ViewData["Title"] = "Index";
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Products List";
 }
 
-<h1>Index</h1>
+<!-- PAGE HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold text-success mb-1">Products Inventory</h2>
+        <small class="text-muted">Manage your store products and stock.</small>
+    </div>
+    <a asp-action="Add_product" class="btn btn-success btn-lg fw-bold rounded-3 px-4 text-nowrap">
+        + Add New Product
+    </a>
+</div>
 
-<p>
-    <a asp-action="Add_product">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.CategoryID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiscountPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.StockQuantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Unit)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Isfeatured)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Isactive)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Createdat)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.categories)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(model => item.CategoryID)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.ProductName)
-            </td>
-            <td>
-                @string.Join(" ",item.Description.Split( ' ' ).Take(8))...
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.DiscountPrice)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.StockQuantity)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Unit)
-            </td>
-            <td>
-                    <img src="~/All_Images/Products/@Html.DisplayFor(model => item.Image)" style="height:60px; width:80px;" />
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Isfeatured)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Isactive)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.Createdat)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.categories)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ProductID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<!-- PRODUCTS TABLE CARD -->
+<div class="card border-0 shadow-sm rounded-4 bg-white overflow-hidden">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light text-uppercase fs-7 fw-bold text-muted">
+                <tr>
+                    <th class="ps-4 py-3 text-nowrap">Product</th>
+                    <th class="py-3 text-nowrap">Category</th>
+                    <th class="py-3 text-nowrap">Price</th>
+                    <th class="py-3 text-nowrap">Stock</th>
+                    <th class="py-3 text-nowrap">Unit</th>
+                    <th class="py-3 text-center text-nowrap">Featured</th>
+                    <th class="py-3 text-center text-nowrap">Status</th>
+                    <th class="py-3 text-nowrap">Created At</th>
+                    <th class="py-3 text-end pe-4 text-nowrap">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (!Model.Any())
+                {
+                    <tr>
+                        <td colspan="9" class="text-center text-muted py-5">
+                            <h6 class="fw-semibold mb-1">No Products Found</h6>
+                            <small>Click "+ Add New Product" to add your first item.</small>
+                        </td>
+                    </tr>
+                }
+                else
+                {
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <!-- PRODUCT IMAGE & NAME -->
+                            <td class="ps-4 py-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <img src="~/All_Images/Products/@item.Image"
+                                         alt="@item.ProductName"
+                                         class="rounded-3 border flex-shrink-0"
+                                         style="width: 48px; height: 48px; object-fit: cover;" />
+                                    <div>
+                                        <h6 class="fw-bold text-dark mb-0 text-nowrap">@item.ProductName</h6>
+                                        <small class="text-muted d-block text-truncate" style="max-width: 220px;">
+                                            @(string.IsNullOrWhiteSpace(item.Description)
+                                                ? "No description"
+                                                : string.Join(" ", item.Description.Split(' ').Take(5)) + "...")
+                                        </small>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <!-- CATEGORY -->
+                            <td class="py-3 fw-semibold text-secondary text-nowrap">
+                                <span class="badge bg-light text-dark border px-2 py-1">
+                                    @(item.categories?.CategoryName ?? item.CategoryID.ToString())
+                                </span>
+                            </td>
+
+                            <!-- PRICE -->
+                            <td class="py-3 text-nowrap">
+                                @if (item.DiscountPrice != null && item.DiscountPrice > 0)
+                                {
+                                    <span class="fw-bold text-success">$@item.DiscountPrice</span>
+                                    <small class="text-muted text-decoration-line-through ms-1 fs-7">$@item.Price</small>
+                                }
+                                else
+                                {
+                                    <span class="fw-bold text-dark">$@item.Price</span>
+                                }
+                            </td>
+
+                            <!-- STOCK -->
+                            <td class="py-3 text-nowrap">
+                                @if (item.StockQuantity <= 5)
+                                {
+                                    <span class="badge bg-danger-subtle text-danger border border-danger-subtle px-2 py-1 fw-bold">
+                                        @item.StockQuantity (Low)
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="fw-semibold text-dark">@item.StockQuantity</span>
+                                }
+                            </td>
+
+                            <!-- UNIT -->
+                            <td class="py-3 text-secondary fw-medium text-nowrap">
+                                @item.Unit
+                            </td>
+
+                            <!-- FEATURED -->
+                            <td class="py-3 text-center text-nowrap">
+                                @if (item.Isfeatured == true)
+                                {
+                                    <span class="badge bg-warning-subtle text-warning-emphasis border border-warning-subtle rounded-pill px-2 py-1">
+                                        ★ Featured
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="text-muted fs-7">—</span>
+                                }
+                            </td>
+
+                            <!-- STATUS -->
+                            <td class="py-3 text-center text-nowrap">
+                                @if (item.Isactive == true)
+                                {
+                                    <span class="badge bg-success-subtle text-success border border-success-subtle rounded-pill px-3 py-1">
+                                        Active
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary-subtle text-secondary border border-secondary-subtle rounded-pill px-3 py-1">
+                                        Inactive
+                                    </span>
+                                }
+                            </td>
+
+                            <!-- CREATED AT -->
+                            <td class="py-3 text-muted fs-7 text-nowrap">
+                                @(item.Createdat.ToString("MMM dd, yyyy") ?? "—")
+                            </td>
+
+                            <!-- ACTIONS IN ONE LINE -->
+                            <td class="py-3 text-end pe-4 text-nowrap">
+                                <div class="d-inline-flex gap-1">
+                                    <a asp-action="Edit" asp-route-id="@item.ProductID" class="btn btn-sm btn-light border text-primary px-2">Edit</a>
+                                    <a asp-action="Details" asp-route-id="@item.ProductID" class="btn btn-sm btn-light border text-info px-2">View</a>
+                                    <a asp-action="Delete" asp-route-id="@item.ProductID" class="btn btn-sm btn-light border text-danger px-2">Delete</a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

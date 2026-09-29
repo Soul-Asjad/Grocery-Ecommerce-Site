@@ -1,0 +1,901 @@
+﻿@{
+    ViewData["Title"] = "Checkout";
+
+    decimal total = 0 ;
+}
+
+<div class="container py-5">
+
+    <!-- PAGE HEADER -->
+    <div class="mb-5">
+        <h2 class="fw-bold mb-1">Checkout</h2>
+
+        <p class="text-muted mb-0">
+            Complete your order by providing your delivery and payment information.
+        </p>
+    </div>
+
+
+    <!-- ===================================================== -->
+    <!-- COMPLETE CHECKOUT FORM -->
+    <!-- ===================================================== -->
+
+    <form asp-action="Checkout"
+          asp-controller="Checkout"
+          method="post">
+
+        <div class="row g-4">
+
+
+            <!-- ================================================= -->
+            <!-- LEFT SIDE -->
+            <!-- ================================================= -->
+
+            <div class="col-lg-7">
+
+
+                <!-- ============================================= -->
+                <!-- DELIVERY INFORMATION -->
+                <!-- ============================================= -->
+
+                <div class="card border-0 shadow-sm mb-4">
+
+                    <div class="card-body p-4">
+
+                        <h5 class="fw-bold mb-4">
+
+                            <i class="ti ti-map-pin me-2"
+                               style="color:#198754;">
+                            </i>
+
+                            Delivery Information
+
+                        </h5>
+
+
+                        <div class="row g-3">
+
+
+                            <!-- FULL NAME -->
+
+                            <div class="col-md-6">
+
+                                <label class="form-label fw-semibold">
+                                    Full Name
+                                </label>
+
+                                <input type="text"
+                                       name="address.FullName"
+                                       class="form-control"
+                                       placeholder="Enter your full name"
+                                       style="border-radius:8px; border:1px solid #dee2e6;"
+                                       onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                       onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                            </div>
+
+
+                            <!-- PHONE -->
+
+                            <div class="col-md-6">
+
+                                <label class="form-label fw-semibold">
+                                    Phone Number
+                                </label>
+
+                                <input type="text"
+                                       name="address.PhoneNumber"
+                                       class="form-control"
+                                       placeholder="03XX XXXXXXX"
+                                       style="border-radius:8px; border:1px solid #dee2e6;"
+                                       onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                       onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                            </div>
+
+
+                            <!-- EMAIL -->
+
+                            <div class="col-12">
+
+                                <label class="form-label fw-semibold">
+                                    Email Address
+                                </label>
+
+                                <input type="email"
+                                       name="address.Email"
+                                       class="form-control"
+                                       placeholder="Enter your email address"
+                                       style="border-radius:8px; border:1px solid #dee2e6;"
+                                       onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                       onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                            </div>
+
+
+                            <!-- CITY -->
+
+                            <div class="col-md-6">
+
+                                <label class="form-label fw-semibold">
+                                    City
+                                </label>
+
+                                <select name="address.City"
+                                        class="form-select"
+                                        style="border-radius:8px; border:1px solid #dee2e6;"
+                                        onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                        onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    <option value="">
+                                        Select City
+                                    </option>
+
+                                    <option value="Karachi">
+                                        Karachi
+                                    </option>
+
+                                    <option value="Lahore">
+                                        Lahore
+                                    </option>
+
+                                    <option value="Islamabad">
+                                        Islamabad
+                                    </option>
+
+                                    <option value="Rawalpindi">
+                                        Rawalpindi
+                                    </option>
+
+                                    <option value="Peshawar">
+                                        Peshawar
+                                    </option>
+
+                                    <option value="Quetta">
+                                        Quetta
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- POSTAL CODE -->
+
+                            <div class="col-md-6">
+
+                                <label class="form-label fw-semibold">
+                                    Postal Code
+                                </label>
+
+                                <input type="text"
+                                       name="address.PostalCode"
+                                       class="form-control"
+                                       placeholder="Postal code"
+                                       style="border-radius:8px; border:1px solid #dee2e6;"
+                                       onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                       onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                            </div>
+
+
+                            <!-- COMPLETE ADDRESS -->
+
+                            <div class="col-12">
+
+                                <label class="form-label fw-semibold">
+                                    Complete Address
+                                </label>
+
+                                <textarea name="address.Address"
+                                          class="form-control"
+                                          rows="3"
+                                          required
+                                          placeholder="House / Flat number, street, area..."
+                                          style="border-radius:8px; resize:none; border:1px solid #dee2e6;"
+                                          onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                          onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');"></textarea>
+
+                            </div>
+
+
+                            <!-- DELIVERY INSTRUCTIONS -->
+
+                            <div class="col-12">
+
+                                <label class="form-label fw-semibold">
+
+                                    Delivery Instructions
+
+                                    <span class="text-muted fw-normal">
+                                        (Optional)
+                                    </span>
+
+                                </label>
+
+                                <textarea name="address.DeliveryInstructions"
+                                          class="form-control"
+                                          rows="2"
+                                          placeholder="Any special instructions for delivery..."
+                                          style="border-radius:8px; resize:none; border:1px solid #dee2e6;"
+                                          onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                          onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');"></textarea>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ============================================= -->
+                <!-- PAYMENT INFORMATION -->
+                <!-- ============================================= -->
+
+                <div class="card border-0 shadow-sm">
+
+                    <div class="card-body p-4">
+
+                        <h5 class="fw-bold mb-4">
+
+                            <i class="ti ti-credit-card me-2"
+                               style="color:#198754;">
+                            </i>
+
+                            Payment Method
+
+                        </h5>
+
+
+                        <!-- ========================================= -->
+                        <!-- CASH ON DELIVERY -->
+                        <!-- ========================================= -->
+
+                        <div id="cashOption"
+                             class="p-3 mb-3"
+                             onclick="selectPayment('cash')"
+                             style="border:1px solid #198754;
+                            border-radius:10px;
+                            background:#eaf7ef;
+                            cursor:pointer;">
+
+                            <div class="d-flex align-items-center">
+
+                                <input type="radio"
+                                       name="payment.PaymentMethod"
+                                       value="CashOnDelivery"
+                                       checked
+                                       style="accent-color:#198754;"
+                                       class="me-3">
+
+                                <div class="flex-grow-1">
+
+                                    <div class="fw-semibold">
+                                        Cash on Delivery
+                                    </div>
+
+                                    <small class="text-muted">
+                                        Pay when your order arrives
+                                    </small>
+
+                                </div>
+
+                                <i class="ti ti-cash fs-4"
+                                   style="color:#198754;">
+                                </i>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ========================================= -->
+                        <!-- EASYPAISA -->
+                        <!-- ========================================= -->
+
+                        <div id="easypaisaOption"
+                             class="p-3 mb-3"
+                             onclick="selectPayment('easypaisa')"
+                             style="border:1px solid #dee2e6;
+                            border-radius:10px;
+                            cursor:pointer;">
+
+                            <div class="d-flex align-items-center">
+
+                                <input type="radio"
+                                       name="payment.PaymentMethod"
+                                       value="Easypaisa"
+                                       style="accent-color:#198754;"
+                                       class="me-3">
+
+                                <div class="flex-grow-1">
+
+                                    <div class="fw-semibold">
+                                        Easypaisa
+                                    </div>
+
+                                    <small class="text-muted">
+                                        Pay using your Easypaisa account
+                                    </small>
+
+                                </div>
+
+                                <i class="ti ti-device-mobile fs-4"
+                                   style="color:#198754;">
+                                </i>
+
+                            </div>
+
+
+                            <!-- EASYPAISA FORM -->
+
+                            <div id="easypaisaForm"
+                                 class="mt-3 d-none"
+                                 onclick="event.stopPropagation()"
+                                 style="background:#f8f9fa;
+                                padding:15px;
+                                border-radius:8px;">
+
+                                <label class="form-label fw-semibold">
+                                    Easypaisa Number
+                                </label>
+
+                                <input type="text"
+                                       name="payment.EasypaisaNumber"
+                                       class="form-control"
+                                       placeholder="03XX XXXXXXX"
+                                       style="border-radius:8px; border:1px solid #dee2e6;"
+                                       onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                       onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ========================================= -->
+                        <!-- CREDIT CARD -->
+                        <!-- ========================================= -->
+
+                        <div id="cardOption"
+                             class="p-3 mb-3"
+                             onclick="selectPayment('card')"
+                             style="border:1px solid #dee2e6;
+                            border-radius:10px;
+                            cursor:pointer;">
+
+                            <div class="d-flex align-items-center">
+
+                                <input type="radio"
+                                       name="payment.PaymentMethod"
+                                       value="CreditCard"
+                                       style="accent-color:#198754;"
+                                       class="me-3">
+
+                                <div class="flex-grow-1">
+
+                                    <div class="fw-semibold">
+                                        Credit Card
+                                    </div>
+
+                                    <small class="text-muted">
+                                        Visa / Mastercard
+                                    </small>
+
+                                </div>
+
+                                <i class="ti ti-credit-card fs-4"
+                                   style="color:#198754;">
+                                </i>
+
+                            </div>
+
+
+                            <!-- CREDIT CARD FORM -->
+
+                            <div id="cardForm"
+                                 class="mt-3 d-none"
+                                 onclick="event.stopPropagation()"
+                                 style="background:#f8f9fa;
+                                padding:15px;
+                                border-radius:8px;">
+
+                                <div class="row g-3">
+
+
+                                    <!-- CARD HOLDER -->
+
+                                    <div class="col-12">
+
+                                        <label class="form-label fw-semibold">
+                                            Card Holder Name
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.CardHolderName"
+                                               class="form-control"
+                                               placeholder="Name on card"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <!-- CARD NUMBER -->
+
+                                    <div class="col-12">
+
+                                        <label class="form-label fw-semibold">
+                                            Card Number
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.CardNumber"
+                                               class="form-control"
+                                               placeholder="XXXX XXXX XXXX XXXX"
+                                               maxlength="19"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <!-- EXPIRY -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label fw-semibold">
+                                            Expiry Date
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.ExpiryDate"
+                                               class="form-control"
+                                               placeholder="MM / YY"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <!-- CVV -->
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label fw-semibold">
+                                            CVV
+                                        </label>
+
+                                        <input type="password"
+                                               name="payment.CVV"
+                                               class="form-control"
+                                               placeholder="***"
+                                               maxlength="4"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- ========================================= -->
+                        <!-- DEBIT CARD -->
+                        <!-- ========================================= -->
+
+                        <div id="debitOption"
+                             class="p-3"
+                             onclick="selectPayment('debit')"
+                             style="border:1px solid #dee2e6;
+                            border-radius:10px;
+                            cursor:pointer;">
+
+                            <div class="d-flex align-items-center">
+
+                                <input type="radio"
+                                       name="payment.PaymentMethod"
+                                       value="DebitCard"
+                                       style="accent-color:#198754;"
+                                       class="me-3">
+
+                                <div class="flex-grow-1">
+
+                                    <div class="fw-semibold">
+                                        Debit Card
+                                    </div>
+
+                                    <small class="text-muted">
+                                        Pay securely using your debit card
+                                    </small>
+
+                                </div>
+
+                                <i class="ti ti-credit-card fs-4"
+                                   style="color:#198754;">
+                                </i>
+
+                            </div>
+
+
+                            <!-- DEBIT CARD FORM -->
+
+                            <div id="debitForm"
+                                 class="mt-3 d-none"
+                                 onclick="event.stopPropagation()"
+                                 style="background:#f8f9fa;
+                                padding:15px;
+                                border-radius:8px;">
+
+                                <div class="row g-3">
+
+
+                                    <div class="col-12">
+
+                                        <label class="form-label fw-semibold">
+                                            Card Holder Name
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.DebitCardHolderName"
+                                               class="form-control"
+                                               placeholder="Name on card"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <div class="col-12">
+
+                                        <label class="form-label fw-semibold">
+                                            Card Number
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.DebitCardNumber"
+                                               class="form-control"
+                                               placeholder="XXXX XXXX XXXX XXXX"
+                                               maxlength="19"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label fw-semibold">
+                                            Expiry Date
+                                        </label>
+
+                                        <input type="text"
+                                               name="payment.DebitExpiryDate"
+                                               class="form-control"
+                                               placeholder="MM / YY"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+
+                                    <div class="col-md-6">
+
+                                        <label class="form-label fw-semibold">
+                                            CVV
+                                        </label>
+
+                                        <input type="password"
+                                               name="payment.DebitCVV"
+                                               class="form-control"
+                                               placeholder="***"
+                                               maxlength="4"
+                                               style="border-radius:8px; border:1px solid #dee2e6;"
+                                               onfocus="this.style.setProperty('border-color','#198754','important'); this.style.setProperty('box-shadow','0 0 0 0.2rem rgba(25,135,84,0.15)','important');"
+                                               onblur="this.style.setProperty('border-color','#dee2e6','important'); this.style.setProperty('box-shadow','none','important');">
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================================================= -->
+            <!-- RIGHT SIDE - ORDER SUMMARY -->
+            <!-- ================================================= -->
+
+            <div class="col-lg-5">
+
+                <div class="card border-0 shadow-sm"
+                     style="position:sticky; top:20px;">
+
+                    <div class="card-body p-4">
+
+
+                        <h5 class="fw-bold mb-4">
+                            Order Summary
+                        </h5>
+
+
+                        <!-- PRODUCT 1 -->
+
+                        @foreach (var item in ViewBag.cartitem)
+                            {
+                            var total_item_price = item.Quantity * item.products.Price;
+                                total += total_item_price;
+
+                            <div class="d-flex align-items-center mb-4">
+
+                                <div class="me-3"
+                                     style="width:65px;
+                                    height:65px;
+                                    background:#f8f9fa;
+                                    border-radius:8px;
+                                    padding:5px;">
+
+                                    <img src="~/All_Images/Products/@item.products.Image"
+                                         class="w-100 h-100"
+                                         style="object-fit:contain;">
+
+                                </div>
+
+                                <div class="flex-grow-1">
+
+                                    <div class="fw-semibold">
+                                        @item.products.ProductName
+                                    </div>
+
+                                    <small class="text-muted">
+                                        @item.Quantity
+                                    </small>
+
+                                </div>
+
+                                <strong>
+                                    $@total_item_price
+                                </strong>
+
+                            </div>
+                            }
+
+
+                        <hr>
+
+
+                        <!-- SUBTOTAL -->
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="text-muted">
+                                Subtotal
+                            </span>
+
+                            <span>
+                                $@total
+                            </span>
+
+                        </div>
+
+
+                        <!-- DELIVERY -->
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="text-muted">
+                                Delivery
+                            </span>
+
+                            <span>
+                                $2.00
+                            </span>
+
+                        </div>
+
+
+                        <!-- DISCOUNT -->
+
+                        <div class="d-flex justify-content-between mb-3">
+
+                            <span class="text-muted">
+                                Discount
+                            </span>
+
+                            <span style="color:#198754;">
+                                -$0.00
+                            </span>
+
+                        </div>
+
+
+                        <hr>
+
+
+                        <!-- TOTAL -->
+
+                        <div class="d-flex justify-content-between align-items-center my-4">
+
+                            <span class="fw-bold">
+                                Total
+                            </span>
+
+                            <span class="fw-bold fs-3"
+                                  style="color:#198754;">
+
+                                $@(total + 2)
+
+                            </span>
+
+                        </div>
+
+
+                        <!-- PLACE ORDER -->
+
+                        <button type="submit"
+                                class="btn w-100 text-white fw-semibold py-3"
+                                style="background:#198754;
+                            border-color:#198754;
+                            border-radius:8px;">
+
+                            <i class="ti ti-lock me-1"></i>
+
+                            Place Order
+
+                        </button>
+
+
+                        <div class="text-center mt-3">
+
+                            <small class="text-muted">
+
+                                <i class="ti ti-shield-check me-1"
+                                   style="color:#198754;">
+                                </i>
+
+                                Secure and safe checkout
+
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- BACK TO CART -->
+        <!-- ================================================= -->
+
+        <div class="mt-4">
+
+            <a asp-action="Cart"
+               class="btn btn-outline-success rounded-pill px-4">
+
+                <i class="ti ti-arrow-left me-1"></i>
+
+                Back to Cart
+
+            </a>
+
+        </div>
+
+    </form>
+
+</div>
+
+
+
+<!-- ========================================================= -->
+<!-- PAYMENT SELECTION -->
+<!-- ========================================================= -->
+
+<script>
+
+    function selectPayment(payment) {
+
+        // Reset all payment cards
+
+        document.getElementById("cashOption").style.borderColor = "#dee2e6";
+        document.getElementById("cashOption").style.backgroundColor = "white";
+
+        document.getElementById("easypaisaOption").style.borderColor = "#dee2e6";
+        document.getElementById("easypaisaOption").style.backgroundColor = "white";
+
+        document.getElementById("cardOption").style.borderColor = "#dee2e6";
+        document.getElementById("cardOption").style.backgroundColor = "white";
+
+        document.getElementById("debitOption").style.borderColor = "#dee2e6";
+        document.getElementById("debitOption").style.backgroundColor = "white";
+
+
+        // Hide all payment forms
+
+        document.getElementById("easypaisaForm").classList.add("d-none");
+
+        document.getElementById("cardForm").classList.add("d-none");
+
+        document.getElementById("debitForm").classList.add("d-none");
+
+
+        // CASH
+
+        if (payment === "cash") {
+
+            document.getElementById("cashOption").style.borderColor = "#198754";
+
+            document.getElementById("cashOption").style.backgroundColor = "#eaf7ef";
+
+        }
+
+
+        // EASYPAISA
+
+        if (payment === "easypaisa") {
+
+            document.getElementById("easypaisaOption").style.borderColor = "#198754";
+
+            document.getElementById("easypaisaOption").style.backgroundColor = "#eaf7ef";
+
+            document.getElementById("easypaisaForm").classList.remove("d-none");
+
+        }
+
+
+        // CREDIT CARD
+
+        if (payment === "card") {
+
+            document.getElementById("cardOption").style.borderColor = "#198754";
+
+            document.getElementById("cardOption").style.backgroundColor = "#eaf7ef";
+
+            document.getElementById("cardForm").classList.remove("d-none");
+
+        }
+
+
+        // DEBIT CARD
+
+        if (payment === "debit") {
+
+            document.getElementById("debitOption").style.borderColor = "#198754";
+
+            document.getElementById("debitOption").style.backgroundColor = "#eaf7ef";
+
+            document.getElementById("debitForm").classList.remove("d-none");
+
+        }
+
+    }
+
+</script>
