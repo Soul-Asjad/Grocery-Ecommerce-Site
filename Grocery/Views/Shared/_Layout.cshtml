@@ -76,12 +76,12 @@
                 </div>
             </div>
             <div class="pt-5">
-                <div class="container">
+                <div class="container text-white">
                     <div class="flex flex-wrap w-full items-center justify-between">
                         <div class="lg:w-1/6 md:w-1/2 w-2/5">
                             <a class="navbar-brand" asp-action="index" asp-controller="Home">
                                 <img alt=""
-                                     src="~/images/logo/freshcart-logo.svg" />
+                                     src="~/images/logo/freshcart-white-logo.svg" />
                             </a>
                         </div>
                         <div class="lg:w-2/5 hidden lg:block">
@@ -125,7 +125,7 @@
                                         <i class="ti ti-map-pin inline-block"
                                            style="font-size:16px; line-height:16px;"></i>
                                     </span>
-                                    <span>Location</span>
+                                    <span class="text-white">Location</span>
                                 </span>
                             </button>
                         </div>
@@ -143,13 +143,13 @@
                                 </div>
                                 @* Login and Signup Logo *@
                                 <div>
-                                    <a class="text-gray-600" asp-action="Signup" asp-controller="User">
+                                    <a class="text-gray-600 text-white" asp-action="Signup" asp-controller="User">
                                         <i class="ti ti-user inline-block"
                                            style="font-size:22px; line-height:22px;"></i>
                                     </a>
                                 </div>
                                 <div class="relative">
-                                    <a class="text-gray-600 relative inline-block"
+                                    <a class="text-gray-600 relative inline-block text-white"
                                        asp-action="Shopping_Cart"
                                        asp-controller="Cart">
 
@@ -184,7 +184,7 @@
                         <div class="offcanvas-header pb-1">
                             <a href="index.html">
                                 <img alt="TailwindCSS eCommerce HTML Template"
-                                     src="assets/images/logo/freshcart-logo.svg" />
+                                     src="assets/images/logo/freshcart-white-logo.svg" />
                             </a>
                             <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button">
                                 <i class="ti ti-x inline-block" style="font-size:24px; line-height:24px;"></i>
@@ -248,7 +248,7 @@
                             <div>
                                 <ul class="navbar-nav lg:flex gap-3 lg:items-center">
                                     <li class="nav-item dropdown w-full lg:w-auto">
-                                        <a class="nav-link" asp-action="index" asp-controller="Home" role="button">Home</a>
+                                        <a class="nav-link text-white  " asp-action="index" asp-controller="Home" role="button">Home</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" asp-controller="Home" asp-action="Product">
@@ -261,15 +261,16 @@
                                     <li class="nav-item">
                                         <a class="nav-link" href="#">Contact</a>
                                     </li>
-                                    @if(role == "Admin")
-                                        {
-                                        <li class="nav-item">
-                                            <a class="nav-link" asp-action="Index" asp-controller="Admin" >Dashboard</a>
-                                        </li>
-                                        }
 
-                                    @if (role == "Admin" || role == "User")
+
+
+                                    @if (role == "User")
                                     {
+                                        <li class="nav-item">
+                                            <a class="nav-link" asp-controller="Order" asp-action="Index" >
+                                                My_Orders
+                                            </a>
+                                        </li>
                                         <li class="nav-item ms-auto">
                                             <a class="nav-link" asp-action="Logout" asp-controller="User">
                                                 Logout

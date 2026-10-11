@@ -66,6 +66,12 @@ namespace Grocery.Controllers
             HttpContext.Session.SetString("user", verified_user.FullName);
             HttpContext.Session.SetInt32("user_id", verified_user.Userid);
             HttpContext.Session.SetString("user_role", verified_user.role);
+
+            if(verified_user.role == "Admin")
+            {
+                return RedirectToAction("Index", "Admin");
+            }
+
             return RedirectToAction("Index", "Home");
 
         }
@@ -88,6 +94,11 @@ namespace Grocery.Controllers
 
         public IActionResult View_Users()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var user = this.context.User.ToList();
             return View(user);
         }
@@ -104,6 +115,11 @@ namespace Grocery.Controllers
 
         public IActionResult Details(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var user = this.context.User.FirstOrDefault(x => x.Userid == id);
 
             return View(user);
@@ -111,6 +127,11 @@ namespace Grocery.Controllers
 
         public IActionResult Edit(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var user = this.context.User.FirstOrDefault(x => x.Userid == id);
             return View(user);
         }
@@ -125,10 +146,7 @@ namespace Grocery.Controllers
                 return NotFound();
             }
 
-            user.FullName = data.FullName;
-            user.phone = data.phone;
             user.isactive = data.isactive;
-            user.email = data.email;
             user.role = data.role;
 
             this.context.SaveChanges();

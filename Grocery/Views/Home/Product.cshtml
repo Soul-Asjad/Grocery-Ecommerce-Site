@@ -47,68 +47,35 @@
 
                 <div class="card-body">
 
-
                     <h5 class="fw-bold mb-4">
                         Categories
                     </h5>
 
-
-
                     <ul class="list-group list-group-flush">
-
 
                         <li class="list-group-item px-0">
                             Fruits
                         </li>
 
-
                         <li class="list-group-item px-0">
                             Vegetables
                         </li>
-
 
                         <li class="list-group-item px-0">
                             Dairy Products
                         </li>
 
-
                         <li class="list-group-item px-0">
                             Drinks
                         </li>
-
 
                         <li class="list-group-item px-0">
                             Snacks
                         </li>
 
-
                     </ul>
-
-
-
-
-                    <hr>
-
-
-
-
-                    <h5 class="fw-bold">
-                        Price
-                    </h5>
-
-
-                    <input type="range"
-                           class="form-range">
-
-
-
                 </div>
-
-
             </div>
-
-
-
         </div>
 
 
@@ -124,45 +91,16 @@
 
         <div class="col-lg-9">
 
-
             <div class="d-flex justify-content-between mb-3">
-
 
                 <span class="text-muted">
                     Showing @ViewBag.products.Count Products
                 </span>
 
-
-
-                <select class="form-select"
-                        style="width:180px;">
-
-                    <option>
-                        Sort By
-                    </option>
-
-                    <option>
-                        Price Low
-                    </option>
-
-                    <option>
-                        Price High
-                    </option>
-
-                </select>
-
-
             </div>
 
 
-
-
-
             <div class="row g-4">
-
-
-
-
 
                 <!-- Product Card -->
                 @foreach (var item in ViewBag.products)
@@ -238,25 +176,14 @@
 
                                 </div>
 
-
-
                             </div>
-
 
                         </div>
 
-
                     </div>
                 }
-
-
-
             </div>
-
-
         </div>
-
-
     </div>
 
 

@@ -15,14 +15,15 @@ namespace Grocery.Controllers
             this.env = env;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
         [HttpGet]
         public IActionResult Add_Category()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             return View();
         }
 
@@ -48,12 +49,18 @@ namespace Grocery.Controllers
 
         public IActionResult View_category()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Categories.ToList();
             return View(data);
         }
 
         public IActionResult Delete(int id)
         {
+
             var data = this.context.Categories.FirstOrDefault(x => x.Categoryid == id);
             this.context.Categories.Remove(data);
             this.context.SaveChanges();
@@ -63,6 +70,11 @@ namespace Grocery.Controllers
 
         public IActionResult Details(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Categories.FirstOrDefault(x => x.Categoryid == id);
             return View(data);
 
@@ -72,6 +84,11 @@ namespace Grocery.Controllers
 
         public IActionResult Edit(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Categories.FirstOrDefault(x => x.Categoryid == id);
             return View(data);
         }

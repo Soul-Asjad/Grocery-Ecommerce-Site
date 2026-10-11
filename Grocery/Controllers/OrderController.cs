@@ -36,6 +36,11 @@ namespace Grocery.Controllers
 
         public IActionResult View_Orders()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var orders = this.context.Orders.ToList();
 
             return View(orders);
@@ -50,5 +55,32 @@ namespace Grocery.Controllers
 
             return RedirectToAction("View_Orders", "Order");
         }
+
+        public IActionResult Edit(int id)
+        {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+            var Order = this.context.Orders.FirstOrDefault(x => x.OrderID == id);
+
+            return View(Order);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Orders data)
+        {
+            var Order = this.context.Orders.FirstOrDefault(x => x.OrderID == data.OrderID);
+
+            Order.Orderstatus = data.Orderstatus;
+            Order.PaymentStatus = data.PaymentStatus;
+
+            this.context.SaveChanges();
+
+            return RedirectToAction("View_Orders" , "Order");
+        }
+
+
     }
 }

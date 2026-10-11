@@ -16,15 +16,14 @@ namespace Grocery.Controllers
             this.env = env;
         }
 
-
-        public IActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
         public IActionResult Add_product()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var categories = this.context.Categories.ToList();
             ViewBag.catlist = new SelectList(categories , "Categoryid", "CategoryName");
 
@@ -54,12 +53,22 @@ namespace Grocery.Controllers
 
         public IActionResult View_Products()
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Products.ToList();
             return View(data);
         }
 
         public IActionResult Details(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Products.FirstOrDefault(x => x.ProductID == id);
             return View(data);
         }
@@ -74,6 +83,11 @@ namespace Grocery.Controllers
 
         public IActionResult Edit(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Products.FirstOrDefault(x => x.ProductID == id);
             var categories = this.context.Categories.ToList();
             ViewBag.catlist = new SelectList(categories, "Categoryid", "CategoryName");

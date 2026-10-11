@@ -18,14 +18,14 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult AddtoCart(int productid, int quantity)
         {
-            var session_id = HttpContext.Session.GetInt32("user_id");                        //  Session Id Checking
+            var session_id = HttpContext.Session.GetInt32("user_id");                        
 
             if (session_id == null)
             {
                 return RedirectToAction("Login", "User");
             }
 
-            var checking_cart = this.context.Cart.FirstOrDefault(x => x.UserID == session_id);        //  Cart CHecking and add in database
+            var checking_cart = this.context.Cart.FirstOrDefault(x => x.UserID == session_id);     
 
             if (checking_cart == null)
             {
@@ -37,9 +37,6 @@ namespace Grocery.Controllers
                 this.context.Cart.Add(checking_cart);
                 this.context.SaveChanges();
             }
-
-
-            //   Existing product checking and adding in database
 
 
             var existing_product = this.context.CartItems.FirstOrDefault(x => x.ProductID == productid && x.CartID == checking_cart.CartID);

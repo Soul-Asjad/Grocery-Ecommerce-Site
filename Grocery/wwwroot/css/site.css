@@ -17,7 +17,34 @@ html {
 body {
     margin: 0;
     padding: 0;
+    background-image: url('../All_Images/image/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+header {
+    background-image: url('../All_Images/image/navbar.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header .navbar,
+header .offcanvas {
+    background-color: transparent !important;
+}
+
+.navbar-default .nav-link {
+    color: white !important;
+    transition: color 0.3s ease;
+}
+
+    .navbar-default .nav-link:hover,
+    .navbar-default .nav-link:focus {
+        color: #07eb25 !important;
+    }
+
 
 /* ==========================================
    Bootstrap Focus Fix
@@ -62,13 +89,14 @@ body {
 .login-page,
 .signup-page {
     min-height: 100vh;
-    background: linear-gradient(135deg,#f3f8f1 0%,#ffffff 50%,#ecf7e8 100%);
+    background: transparent !important;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
     font-family: inherit;
 }
+
 
 /* ==========================================
    Containers
@@ -80,10 +108,10 @@ body {
     max-width: 1100px;
     display: grid;
     grid-template-columns: 1.1fr .9fr;
-    background: #fff;
+    background-color: transparent !important;
     border-radius: 24px;
     overflow: hidden;
-    border: 1px solid #e5e7eb;
+    border: none;
 }
 
 /* ==========================================

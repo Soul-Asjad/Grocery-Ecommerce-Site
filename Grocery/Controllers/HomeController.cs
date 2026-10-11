@@ -22,7 +22,8 @@ namespace Grocery.Controllers
         public IActionResult Index()
         {
             ViewBag.category = this.context.Categories.ToList();
-            ViewBag.products = this.context.Products.ToList();
+            ViewBag.products = this.context.Products.Where(x => !x.Isfeatured).ToList().Take(8);
+            ViewBag.feature_products = this.context.Products.Where(x => x.Isfeatured).ToList().Take(4);
 
             //ViewBag.Category = category;
             //ViewBag.Products = products;
@@ -49,11 +50,21 @@ namespace Grocery.Controllers
             return View(data);
         }
 
-        public IActionResult Product(int page = 1)
+        public IActionResult Product(string search ,int page = 1)
         {
+
+            var query = this.context.Products.Include(x => x.categories).AsQueryable();
+
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(x => x.ProductName.Contains(search));
+            }
+
+            ViewBag.search = search;
+
             int page_size = 10;
 
-            ViewBag.products = this.context.Products.Include(x => x.categories).Skip((page - 1) * page_size).Take(page_size).ToList();
+            ViewBag.products = query.Skip((page - 1) * page_size).Take(page_size).ToList();
 
             ViewBag.CurrentPage = page;
 
