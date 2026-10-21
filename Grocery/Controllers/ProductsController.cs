@@ -1,6 +1,7 @@
 ﻿using Grocery.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 
 namespace Grocery.Controllers
 {
@@ -33,7 +34,12 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Add_product(Products data, IFormFile Image)
         {
-             if(Image != null)
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+            if (Image != null)
                 {
                     var filename = Guid.NewGuid().ToString() + " _ " + Image.FileName;
                     var path = Path.Combine(env.WebRootPath, "All_Images/Products/", filename);
@@ -51,14 +57,15 @@ namespace Grocery.Controllers
 
         }
 
-        public IActionResult View_Products()
+        public async Task<IActionResult> View_Products()
         {
             if (HttpContext.Session.GetString("user_role") != "Admin")
             {
                 return RedirectToAction("Login", "User");
             }
 
-            var data = this.context.Products.ToList();
+            var data = await context.Products.AsNoTracking().ToListAsync();
+
             return View(data);
         }
 
@@ -75,6 +82,11 @@ namespace Grocery.Controllers
 
         public IActionResult Delete(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var data = this.context.Products.FirstOrDefault(x => x.ProductID == id);
             this.context.Products.Remove(data);
             this.context.SaveChanges();
@@ -98,6 +110,11 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Edit(Products data, IFormFile Image)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var old_data = this.context.Products.FirstOrDefault(x => x.ProductID == data.ProductID);
 
             if(old_data == null)

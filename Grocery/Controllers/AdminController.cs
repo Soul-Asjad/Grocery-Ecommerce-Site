@@ -15,10 +15,11 @@ namespace Grocery.Controllers
 
         public IActionResult Index()
         {
-            if (HttpContext.Session.GetString("user_role") != "Admin")
+            if(HttpContext.Session.GetString("user_role") != "Admin")
             {
-                return RedirectToAction("Login", "User");
+                return RedirectToAction("Login" , "User");
             }
+
 
             ViewBag.products = this.context.Products.Count();
             ViewBag.users = this.context.User.Count();
@@ -35,19 +36,6 @@ namespace Grocery.Controllers
 
             return View();
         }
-
-        public IActionResult Categories()
-        {
-            if (HttpContext.Session.GetString("user_role") != "Admin")
-            {
-                return RedirectToAction("Login", "User");
-            }
-            return View();
-        }
-
-
-
-
 
     }
 }

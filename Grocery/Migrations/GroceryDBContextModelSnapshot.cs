@@ -17,7 +17,7 @@ namespace Grocery.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.29")
+                .HasAnnotation("ProductVersion", "8.0.32")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -152,6 +152,35 @@ namespace Grocery.Migrations
                     b.HasKey("Categoryid");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Grocery.Models.Contact", b =>
+                {
+                    b.Property<int>("ContactID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ContactID"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Message")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Subject")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ContactID");
+
+                    b.ToTable("Contact");
                 });
 
             modelBuilder.Entity("Grocery.Models.OrderItems", b =>

@@ -1,6 +1,9 @@
 ﻿using Grocery.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Grocery.Controllers
 {
@@ -56,9 +59,10 @@ namespace Grocery.Controllers
         {
             var verified_user = this.context.User.Where(x => x.email == user.email).FirstOrDefault();
 
-            if (verified_user == null || !BCrypt.Net.BCrypt.Verify(user.Password, verified_user.Password))
+            if (verified_user == null || verified_user.email != user.email || !BCrypt.Net.BCrypt.Verify(user.Password, verified_user.Password))
             {
                 TempData["error"] = "Invalid credentials";
+                return RedirectToAction("Login");
             }
 
 
@@ -67,7 +71,8 @@ namespace Grocery.Controllers
             HttpContext.Session.SetInt32("user_id", verified_user.Userid);
             HttpContext.Session.SetString("user_role", verified_user.role);
 
-            if(verified_user.role == "Admin")
+
+            if (verified_user.role == "Admin")
             {
                 return RedirectToAction("Index", "Admin");
             }
@@ -105,6 +110,11 @@ namespace Grocery.Controllers
 
         public IActionResult Delete(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var user = this.context.User.FirstOrDefault(x => x.Userid == id);
 
             this.context.User.Remove(user);
@@ -139,6 +149,11 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Edit(Users data)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var user = this.context.User.FirstOrDefault(x => x.Userid == data.Userid);
 
             if (user == null)

@@ -53,8 +53,11 @@
                                 <div class="d-flex align-items-center gap-3">
                                     <img src="~/All_Images/Products/@item.Image"
                                          alt="@item.ProductName"
-                                         class="rounded-3 border flex-shrink-0"
-                                         style="width: 48px; height: 48px; object-fit: cover;" />
+                                         class="product-thumbnail rounded-3 border flex-shrink-0"
+                                         width="48"
+                                         height="48"
+                                         loading="lazy"
+                                         decoding="async" />
                                     <div>
                                         <h6 class="fw-bold text-dark mb-0 text-nowrap">@item.ProductName</h6>
                                         <small class="text-muted d-block text-truncate" style="max-width: 220px;">

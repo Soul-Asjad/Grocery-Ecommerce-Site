@@ -14,6 +14,7 @@ namespace Grocery.Controllers
 
         public IActionResult Index()
         {
+
             var session = HttpContext.Session.GetInt32("user_id");
 
             var order = this.context.Orders.Where(x => x.UserID == session).ToList();
@@ -23,7 +24,15 @@ namespace Grocery.Controllers
 
         public IActionResult Details(int id)
         {
-            var order = this.context.Orders.FirstOrDefault(x => x.OrderID == id);
+            var user = HttpContext.Session.GetInt32("user_id");
+
+            if(user == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var order = this.context.Orders.FirstOrDefault(x => x.OrderID == id && x.UserID == user.Value);
+
             if(order == null)
             {
                 return NotFound();
@@ -48,6 +57,11 @@ namespace Grocery.Controllers
 
         public IActionResult Delete(int id)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var order = this.context.Orders.FirstOrDefault(x => x.OrderID == id);
 
             this.context.Orders.Remove(order);
@@ -71,6 +85,11 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Edit(Orders data)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var Order = this.context.Orders.FirstOrDefault(x => x.OrderID == data.OrderID);
 
             Order.Orderstatus = data.Orderstatus;

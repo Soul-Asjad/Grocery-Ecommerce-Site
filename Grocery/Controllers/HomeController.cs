@@ -74,6 +74,27 @@ namespace Grocery.Controllers
             return View();
         }
 
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Contact(Contact data)
+        {
+            var session = HttpContext.Session.GetInt32("user_id");
+
+            if(session == null)
+            {
+                return RedirectToAction("Login", "User");
+            }
+
+            this.context.Contact.Add(data);
+            this.context.SaveChanges();
+
+            return View();
+        }
+
 
         //public IActionResult Product(string? search, int page = 1)
         //{

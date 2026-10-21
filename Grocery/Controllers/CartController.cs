@@ -96,7 +96,26 @@ namespace Grocery.Controllers
 
         public IActionResult Remove(int id)
         {
-            var item = this.context.CartItems.FirstOrDefault(x => x.CartItemID == id);
+            var user = HttpContext.Session.GetInt32("user_id");
+
+            if(user == null)
+            {
+                return RedirectToAction("Login" , "User");
+            }
+
+            var cart = this.context.Cart.FirstOrDefault(x => x.UserID == user.Value);
+
+            if(cart == null)
+            {
+                return NotFound();
+            }
+
+            var item = this.context.CartItems.FirstOrDefault(x => x.CartItemID == id && x.CartID == cart.CartID);
+
+            if(item == null)
+            {
+                return NotFound();
+            }
 
             this.context.CartItems.Remove(item);
             this.context.SaveChanges();
@@ -108,8 +127,22 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult UpdateQuantity(int id, int quantity)
         {
+            var user = HttpContext.Session.GetInt32("user_id");
+
+            if(user == null)
+            {
+                return Unauthorized();
+            }
+
+            var cart = this.context.Cart.FirstOrDefault(x => x.UserID == user.Value);
+
+            if(cart == null)
+            {
+                return NotFound();
+            }
+
             var cartitem = this.context.CartItems.Include(x => x.products)
-                .FirstOrDefault(x => x.CartItemID == id);
+                .FirstOrDefault(x => x.CartItemID == id && x.CartID == cart.CartID);
 
             if (cartitem == null)
             {

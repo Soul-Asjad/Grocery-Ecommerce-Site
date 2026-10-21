@@ -30,6 +30,11 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Add_Category(Categories data, IFormFile Image)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             if (Image != null)
             {
                 var filename = Guid.NewGuid().ToString() + "_" + Image.FileName;
@@ -60,6 +65,11 @@ namespace Grocery.Controllers
 
         public IActionResult Delete(int id)
         {
+
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
 
             var data = this.context.Categories.FirstOrDefault(x => x.Categoryid == id);
             this.context.Categories.Remove(data);
@@ -96,6 +106,11 @@ namespace Grocery.Controllers
         [HttpPost]
         public IActionResult Edit(Categories data, IFormFile Image)
         {
+            if (HttpContext.Session.GetString("user_role") != "Admin")
+            {
+                return RedirectToAction("Login", "User");
+            }
+
             var old_data = this.context.Categories.FirstOrDefault(x => x.Categoryid == data.Categoryid);
 
             if (old_data == null)

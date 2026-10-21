@@ -1,0 +1,193 @@
+@model IEnumerable<Grocery.Models.Contact>
+
+@{
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Contact Messages";
+}
+
+<div class="container-fluid py-4 px-3 px-lg-4">
+
+    <!-- Page Header -->
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-4">
+        <div>
+            <h2 class="fw-bold mb-1">Contact Messages</h2>
+            <p class="text-secondary mb-0">
+                Manage customer questions, feedback, and support requests.
+            </p>
+        </div>
+
+        <div class="rounded-3 px-4 py-3 text-white"
+             style="background-color: #3ac744;">
+            <div class="small">Total Messages</div>
+            <h3 class="fw-bold mb-0">@Model.Count()</h3>
+        </div>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="row g-3 mb-4">
+
+        <div class="col-sm-6 col-xl-4">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4 d-flex align-items-center">
+                    <div class="rounded-3 p-3 me-3"
+                         style="background-color: #e8f9e9;">
+                        <span class="fw-bold fs-4"
+                              style="color: #3ac744;">✉</span>
+                    </div>
+                    <div>
+                        <p class="text-secondary mb-1">All Messages</p>
+                        <h4 class="fw-bold mb-0">@Model.Count()</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-4">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4 d-flex align-items-center">
+                    <div class="rounded-3 p-3 me-3"
+                         style="background-color: #e8f9e9;">
+                        <span class="fw-bold fs-4"
+                              style="color: #3ac744;">✓</span>
+                    </div>
+                    <div>
+                        <p class="text-secondary mb-1">Customer Support</p>
+                        <h5 class="fw-bold mb-0">Messages</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-4">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4 d-flex align-items-center">
+                    <div class="rounded-3 p-3 me-3"
+                         style="background-color: #e8f9e9;">
+                        <span class="fw-bold fs-4"
+                              style="color: #3ac744;">★</span>
+                    </div>
+                    <div>
+                        <p class="text-secondary mb-1">Feedback</p>
+                        <h5 class="fw-bold mb-0">Customer Opinions</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Messages Table -->
+    <div class="card border-0 shadow-sm rounded-4">
+
+        <div class="card-header bg-white border-0 px-4 pt-4 pb-3">
+            <h5 class="fw-bold mb-1">Customer Inquiries</h5>
+            <p class="text-secondary small mb-0">
+                View customer details and manage submitted messages.
+            </p>
+        </div>
+
+        <div class="card-body p-0">
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+
+                    <thead>
+                        <tr class="table-light">
+                            <th class="ps-4 py-3">Customer</th>
+                            <th class="py-3">Subject</th>
+                            <th class="py-3">Message</th>
+                            <th class="py-3 text-center">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td class="ps-4 py-3">
+                                        <div class="d-flex align-items-center">
+                                            <div class="rounded-circle d-flex align-items-center justify-content-center me-3 flex-shrink-0"
+                                                 style="width: 42px; height: 42px; background-color: #e8f9e9; color: #218838;">
+                                                <span class="fw-bold">
+                                                    @(string.IsNullOrWhiteSpace(item.FullName)
+                                                        ? "?"
+                                                        : item.FullName.Substring(0, 1).ToUpper())
+                                                </span>
+                                            </div>
+
+                                            <div>
+                                                <div class="fw-semibold">
+                                                    @item.FullName
+                                                </div>
+                                                <div class="small text-secondary">
+                                                    @item.Email
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+
+                                    <td class="py-3">
+                                        <span class="badge rounded-pill px-3 py-2"
+                                              style="background-color: #e8f9e9; color: #218838;">
+                                            @item.Subject
+                                        </span>
+                                    </td>
+
+                                    <td class="py-3" style="max-width: 320px;">
+                                        <div class="text-secondary text-truncate"
+                                             style="max-width: 300px;"
+                                             title="@item.Message">
+                                            @item.Message
+                                        </div>
+                                    </td>
+
+                                    <td class="py-3 text-center">
+                                        <div class="d-flex justify-content-center gap-2">
+                                            <a asp-action="Details"
+                                               asp-route-id="@item.ContactID"
+                                               class="btn btn-sm btn-outline-success rounded-3 px-3">
+                                                Details
+                                            </a>
+
+                                            <a asp-action="Delete"
+                                               asp-route-id="@item.ContactID"
+                                               class="btn btn-sm btn-outline-danger rounded-3 px-3">
+                                                Delete
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="4" class="text-center py-5">
+                                    <div class="mb-3">
+                                        <span class="fs-1 text-secondary">✉</span>
+                                    </div>
+                                    <h5 class="fw-bold">No Messages Yet</h5>
+                                    <p class="text-secondary mb-0">
+                                        Customer messages will appear here when submitted.
+                                    </p>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+
+                </table>
+            </div>
+
+        </div>
+
+        <div class="card-footer bg-white border-0 px-4 py-3">
+            <small class="text-secondary">
+                Showing @Model.Count() message(s)
+            </small>
+        </div>
+
+    </div>
+
+</div>

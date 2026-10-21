@@ -21,6 +21,7 @@ namespace Grocery.Models
         public DbSet<Payments> Payments { get; set; }
         public DbSet<Reviews> Reviews { get; set; }
         public DbSet<Wishlist> Wishlist { get; set; }
+        public DbSet<Contact> Contact { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

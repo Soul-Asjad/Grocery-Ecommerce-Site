@@ -1,0 +1,224 @@
+﻿@model Grocery.Models.Contact
+
+@{
+    ViewData["Title"] = "Contact Us";
+}
+
+<div class="container py-5">
+
+    <!-- Page Heading -->
+    <div class="text-center mb-5">
+        <span class="badge rounded-pill bg-success-subtle text-success px-3 py-2 mb-3">
+            WE'RE HERE TO HELP
+        </span>
+
+        <h1 class="fw-bold display-5 text-success">
+            Get in Touch
+        </h1>
+
+        <p class="text-secondary mx-auto">
+            Have a question about your order, our products, or delivery?
+            Send us a message and we'll be happy to help.
+        </p>
+    </div>
+
+    <div class="row g-4">
+
+        <!-- Contact Information -->
+        <div class="col-lg-5">
+            <div class="rounded-4 p-4 p-md-5 h-100 text-white bg-success">
+
+                <h3 class="fw-bold mb-3">Contact Information</h3>
+
+                <p class="mb-5 text-white">
+                    We're always happy to hear from you. Reach out to us
+                    using the details below.
+                </p>
+
+                <div class="d-flex align-items-start mb-4">
+                    <div class="rounded-3 p-3 me-3 bg-dark bg-opacity-25">
+                        <span class="fw-bold">01</span>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Our Address</h6>
+                        <p class="mb-0 text-white">
+                            Add your store address here
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-4">
+                    <div class="rounded-3 p-3 me-3 bg-dark bg-opacity-25">
+                        <span class="fw-bold">02</span>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Phone Number</h6>
+                        <p class="mb-0 text-white">
+                            Add your contact number here
+                        </p>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-start mb-5">
+                    <div class="rounded-3 p-3 me-3 bg-dark bg-opacity-25">
+                        <span class="fw-bold">03</span>
+                    </div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Email Address</h6>
+                        <p class="mb-0 text-white">
+                            support@yourstore.com
+                        </p>
+                    </div>
+                </div>
+
+                <hr class="border-light opacity-50" />
+
+                <h6 class="fw-bold mb-3">Why Shop With Us?</h6>
+
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2 fw-bold">✓</span>
+                    <span class="text-white">Fresh and quality products</span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                    <span class="me-2 fw-bold">✓</span>
+                    <span class="text-white">Convenient home delivery</span>
+                </div>
+
+                <div class="d-flex align-items-center">
+                    <span class="me-2 fw-bold">✓</span>
+                    <span class="text-white">Friendly customer support</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm rounded-4 h-100">
+                <div class="card-body p-4 p-md-5">
+
+                    <h3 class="fw-bold mb-2 text-success">
+                        Send Us a Message
+                    </h3>
+
+                    <p class="text-secondary mb-4">
+                        Fill in the form below and tell us how we can help.
+                    </p>
+
+                    <form asp-controller="Home"
+                          asp-action="Contact"
+                          method="post">
+
+                        <div class="row g-3">
+
+                            <div class="col-md-6">
+                                <label asp-for="FullName"
+                                       class="form-label fw-semibold">
+                                    Full Name
+                                </label>
+                                <input asp-for="FullName"
+                                       type="text"
+                                       class="form-control py-2"
+                                       placeholder="Enter your full name"
+                                       required />
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Email"
+                                       class="form-label fw-semibold">
+                                    Email Address
+                                </label>
+                                <input asp-for="Email"
+                                       type="email"
+                                       class="form-control py-2"
+                                       placeholder="you@example.com"
+                                       required />
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="Subject"
+                                       class="form-label fw-semibold">
+                                    Subject
+                                </label>
+                                <select asp-for="Subject"
+                                        class="form-select py-2"
+                                        required>
+                                    <option value="">Select a subject</option>
+                                    <option value="Order Inquiry">Order Inquiry</option>
+                                    <option value="Product Inquiry">Product Inquiry</option>
+                                    <option value="Delivery Issue">Delivery Issue</option>
+                                    <option value="Payment Issue">Payment Issue</option>
+                                    <option value="Feedback">Feedback</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="Message"
+                                       class="form-label fw-semibold">
+                                    Your Message
+                                </label>
+                                <textarea asp-for="Message"
+                                          class="form-control"
+                                          rows="5"
+                                          placeholder="Write your message here..."
+                                          required></textarea>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button type="submit"
+                                        class="btn btn-success fw-semibold px-4 py-3 w-100 rounded-3">
+                                    Send Message
+                                    <span class="ms-2">→</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bottom Section -->
+    <div class="row mt-5 g-3">
+
+        <div class="col-md-4">
+            <div class="border border-success-subtle rounded-4 p-4 text-center h-100">
+                <h5 class="fw-bold text-success">
+                    Customer Support
+                </h5>
+                <p class="text-success mb-0">
+                    Need help with an order? Contact our support team.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="border border-success-subtle rounded-4 p-4 text-center h-100">
+                <h5 class="fw-bold text-success">
+                    Fresh Products
+                </h5>
+                <p class="text-success mb-0">
+                    Have questions about product quality or availability?
+                </p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="border border-success-subtle rounded-4 p-4 text-center h-100">
+                <h5 class="fw-bold text-success">
+                    Order Assistance
+                </h5>
+                <p class="text-success mb-0">
+                    We're here to help with delivery and payment questions.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
