@@ -11,6 +11,7 @@ builder.Services.AddDbContext<GroceryDBContext>(options => options.UseSqlServer(
 builder.Services.AddScoped<IMyService, MyService>();
 builder.Services.AddScoped<AdminService, Services>();
 builder.Services.AddSession();
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

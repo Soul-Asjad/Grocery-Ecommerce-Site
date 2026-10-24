@@ -29,6 +29,103 @@
     <title>FreshCart Grocery Store</title>
 </head>
 
+<button id="chatToggle" class="btn btn-success rounded-circle"
+        style="position:fixed;bottom:20px;right:20px;width:56px;height:56px;z-index:1000">
+    Chat
+</button>
+
+<div id="chatBox" style="display:none;position:fixed;bottom:90px;right:20px;width:320px;z-index:1000"
+     class="card shadow">
+    <div class="card-header bg-success text-white">Grocery Assistant</div>
+    <div id="chatLog" class="card-body" style="height:280px;overflow-y:auto"></div>
+    <div class="card-footer d-flex gap-2">
+        <input id="chatInput" class="form-control" maxlength="300" placeholder="Type or use the mic..." />
+        <button id="chatMic" type="button" class="btn btn-outline-success">Mic</button>
+        <button id="chatSend" class="btn btn-success">Send</button>
+    </div>
+</div>
+
+<script>
+    const log = document.getElementById('chatLog');
+    const input = document.getElementById('chatInput');
+    const box = document.getElementById('chatBox');
+    const KEY = 'groceryChat';
+    const OPEN_KEY = 'groceryChatOpen';
+
+    // Load the saved chat for this tab (empty if there is none)
+    let history = [];
+    try { history = JSON.parse(sessionStorage.getItem(KEY)) || []; } catch (e) { history = []; }
+
+    function saveHistory() {
+        try { sessionStorage.setItem(KEY, JSON.stringify(history.slice(-40))); } catch (e) { }
+    }
+
+    // who is 'user' or 'assistant'. save = false means just show it, don't store it.
+    function addLine(who, text, save = true) {
+        const p = document.createElement('p');
+        p.textContent = (who === 'user' ? 'You' : 'Grocery Assistant') + ': ' + text;
+        log.appendChild(p);
+        log.scrollTop = log.scrollHeight;
+        if (save) {
+            history.push({ role: who, content: text });
+            saveHistory();
+        }
+    }
+
+    // Redraw the saved messages when a page loads
+    history.forEach(m => addLine(m.role, m.content, false));
+
+    // Keep the chat window open if it was open on the last page
+    try { if (sessionStorage.getItem(OPEN_KEY) === '1') box.style.display = 'block'; } catch (e) { }
+
+    document.getElementById('chatToggle').onclick = () => {
+        box.style.display = box.style.display === 'none' ? 'block' : 'none';
+        try { sessionStorage.setItem(OPEN_KEY, box.style.display === 'block' ? '1' : '0'); } catch (e) { }
+    };
+
+    async function sendChat() {
+        const text = input.value.trim();
+        if (!text) return;
+
+        const previous = history.slice(-6);   // earlier messages, taken before adding the new one
+        addLine('user', text);
+        input.value = '';
+
+        try {
+            const res = await fetch('/Chat/Ask', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: text, history: previous })
+            });
+            const data = await res.json();
+            addLine('assistant', data.reply);
+        } catch (e) {
+            addLine('assistant', 'Connection problem. Please try again.', false);
+        }
+    }
+
+    document.getElementById('chatSend').onclick = sendChat;
+    input.addEventListener('keydown', e => { if (e.key === 'Enter') sendChat(); });
+
+    // Voice input: speech becomes text in the message box
+    const mic = document.getElementById('chatMic');
+    const SpeechRec = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRec) {
+        mic.style.display = 'none';
+    } else {
+        const rec = new SpeechRec();
+        rec.lang = 'en-US';
+        rec.interimResults = false;
+        rec.onstart = () => mic.textContent = 'Listening...';
+        rec.onend = () => mic.textContent = 'Mic';
+        rec.onerror = e => addLine('assistant', 'Voice error: ' + e.error, false);
+        rec.onresult = e => { input.value = e.results[0][0].transcript; };
+        mic.onclick = () => rec.start();
+    }
+</script>
+
+
 <body>
     <header>
   
